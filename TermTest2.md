@@ -283,4 +283,270 @@
 ---
 ### Roots
 #### Structure and functions
+##### Functions
+  * **vascular transport**: Conduit of vascular cylinder (stele): xylem and phloem
+    * Xylem: water conducting tissue (root to shoot)
+    * Phloem: food conducting tissue (shoot to root)
+  * **Absorption** of water and nutrient minerals (N, P, K)
+  * **Anchor** (stablize) plants into soil
+  * **storage** of water or food
+  * Aide in **Asexual Reproduction**
+  * **Produce hormones** and **Secondary metabolits** that regulate plant development and communication
+##### Systems
+  * **Embryo radicle** emerges immediately upon germination, from this radicle a **primary root** forms, then secondary root.
+  * **Firous**: found in **monocots** and some dicots
+    * large number of fine roots of similar diameter
+    * **Adventitious roots** form from stem or leaf
+    * **Lateral roots** form from adventitious roots
+    * typically shallow
+    * imcreased number of roots lead to improved water acquisition; not drought tolerant
+    * stabilize soil, decrease erosion
+    * core of parenchyma cells (**pith**) is surrounded by **rings of xylem and phloem** in monocot root. pith cells arise from procambium and not ground meristem. in Monocot
+  * **Tap root**: in **dicots** and **gymnosperms**
+    * thick **tap root**, and thinner **secondary roots** form from that.
+    * deep into soil
+    * not as effective at water absorption as fibrous root systems, but allow survive under extreme conditions.
+    * **water or food storage** in dicots
+    * "arms" of xylem with phloem patches in between, **no pith** 
+  * Root specialization: **water storage**: pumpkin family
+  * Root specialization: **Food storage**: 
+    * **starch (carbonhydrate)**: sweet potatoes, cassava, hemlock and dandelions
+    * storage cells are increased number of **parenchyma**, formed by **anomalous secondary** (thickening) growth
+##### external structure
+  * General structures
+    * **Lateral Roots**: from pericycle
+    * **Root hairs**: epidermal cell extensions, absorption of water and nutrients
+      * Adhere tightly to soil particles in order to compete for water and nutrients
+      * Increase total surface area of absorption
+      * In growing roots, new root hairs are continuously formed with older root hairs dying off; root hairs always in zone of maturation near root cap.
+    * **Root cap**: mass of parenchyma cells that cover teach root tip
+      * protect tissues from damage as root grows, first cell layer has **waxy cuticle**
+      * Secretes mucilage that aides in growth through soil and provides medium for beneficial bacteria
+      * Amyloplasts in tip act as gravity sensors
+  * **12 Essential nutrient elements**:
+    * root compete with negatively charged soil silicates for minerals and water
+    * Macronutrients: 
+      * primary: Nitrogen, phosphor, potassium
+      * intermediate: sulpher, calcium, magnesium
+    * Micronutrients: Iron, zinc, manganese, molybdenum, copper, boron
+  * Root Protection Permeability
+    * prevent microorganism in soil from getting into root vascular cylinder
+    * **Chemical Protection**
+      * woody gymnosperm roots have resin canals and dicot taproots produce latex
+      * Polyphenol **flavonoids** with anti-funggal, anti-viral and anti-microbial properties accumulate in root cell vacuoles (eg. **Glabridin flavonoid** of licorice (Glycyrrhiza sp.) root has great pharmaceutical significance as an anti-bac, anti-inflammatory and anti-cancer agent)
+    * Root Hair
+      * epidermal root hairs **do not have a cuticle** to aide in absorption
+      * **cell walls are permeable** to water, solutes and potentially invasive microorganisms without cuticle
+      * impregnate key cell layers of cortex with **suberin** and **lignin** to restrict water and solute movement
+      * **casparian strips**: deposits of lignin and suberin in the radial primary cell wall and middle lamella of endodermis and exodermis
+    * **Endodermis** (all vascular plants) and **Exodermis** (majority)
+      * both are part of root cortex and have **Casparian strips**
+      * Exo: **outermost** cell layer of cortex
+      * Endo: **innermost**, above pericycle and vascular cylinder
+      * **Passage cells**: lack casparian strips, allow fast passive transport, not always present
+  * Mycorrhizae mutualistic Relationships
+    * \>70%, mycorrhizae essential for development
+    * **Mutualistic relationship**: both benefit and dependent
+      * Fungi: facilitate absorption, particularly P
+      * plants provides protection, sugars and amino acids
+    * **Ectomycorrhizae**: 
+      * Fungi on surface, forming **mantle** around root
+      * accumulate minerales in mantle coated root hairs (plant)
+      * solid substrate to grow on (fungi)
+    * **Endomycorrhizae**:
+      * **Fungi penerate root cortex**(parenchyma cells)
+      * **Arbuscules**: fungi branching structures
+      * plant increase absorption of nutrients (Phosphorous)
+      * fungi provided with food (carbohydrates) and protection
+    * Bacteria root nodules:
+      * Rhizobia (bacteria) with **Legumes** (Fabaceae)
+      * Rhizobia: enzymes to convert (fix) **Nitrogen** from atomosphere into plant usable forms (nitrates and ammonia)
+      * **Root Nodules** contain large numbers of nitrogen-fixing bacteria
+#### Primary and Secondary Growth
+##### Root primary growth
+  * **Region of Cell Division(Root Apical Meristem, RAM)**: in the center of root tip
+    * **Protoderm**: give rise to epidermis
+    * **Ground meristem**: give rise to cortex (parenchyma, exodermis, endodermis)
+    * **Procambium**: give rise to primary xylem, primary phloem and pericycle (vascular cylinder)
+  * **Regions**:
+    * **Maturation**: differentiated(mature) cells into distinctive cell types
+    * **Elongation**: cells become several times original length, not differentiated
+    * matures in retrograde
+  * **Pericycle**   
+    * single cell later, directly below **endodermis**
+    * give rise to lateral roots and part of the vascular cambium
+    * displaces cortex and epidermis as lateral root grows outwards, from vascular cylinder to epidermis
+    * eventually **break through epidermis**
+    * vascular cylinder stays connected
+##### Secondary Root Growth
+  * NO in fibrous
+  * occurs where primary growth has been compelted
+  * **Dicots and conifer tap roots** have secondary growth to:
+    1. Increase conductivity
+    2. Replace old vascular tissue
+    3. provide protection (periderm = bark)
+    4. Form specialized storage roots by anomalous secondary growth (thickening)
+    5. Provide support in specialized roots
+  * **Vascular cambium**
+    * forms from de-differentiated **parenchyma** between primary xylem and phloem and pericyle, Initiated by hormone **auxin**
+    * forms **continuous ring** of meristemic cells
+    * primary xy/ph: stars; then secondary: rings
+    * as in stems: secondary xylem = wood, and less secondary phloem produced
+    * Xylem rays: living parenchyma, transfer water horizontally across secondary xylem.
+  * **Cork cambium**:
+    * Cork (phellem), cork cambium, Phelloderm
+    * forms from dedifferentiated parenchyma cortex, then secondary phloem.
+  * **Annual Growth Rings**
+    * hard to distinguish as secondary xylem size does not vary by growing season as in stems
+  * Anomalous secondary thickening: **Food storage**:
+    * xylem, phloem and parenchyma
+    * Beets have growth rings: repeating secondary xylem, secondary phloem and storage parenchyma
+  * Root periderm scars
+    * **NOT for gas exchange**
+    * **wound response** to lateral root break
+#### Specialized root function
+* water and food storage from previous sections
+* **Asexual Reproduction**: form **adventitious buds** from these **aerial stems (suckers)** form; suckers develop their own roots and can survive independently. (shurbs and fruit trees)
+* **Gas Exchange**: **pheumatophores** extend above surface ans use **lenticels** to obtain oxygen for respiration (near water or swamps)
+* **Aerial Roots**: **Epiphytes** such as orchids grow on other plants for support but nourish them selves (not parasite)
+  * **Velamen layer**: epidermis several cel layers thick to reduce water loss
+  * Epiphyte roots absorb water and nutrients from rain water
+  * Aerial roots can also aide in climbing (English Ivy)
+* **Aerial (Prop) Roots**: Tropical trees (figs, banyan) have stilt-like **prop roots** that grow down from branches. continue secondary growth to expand radius and stability once they reached ground.
+* **Additional support**: **Buttress roots** extend from the base of tree trunk to help stabilize tree in shallow soil; common in tropical trees.
+* **Parasitism**: **Parasitic roots (dobbers)**
+  * have no chlorophyll and dependent on chlorophyll-bearing plants for nutrition.
+  * Use peg-like projections (**haustoria**) to tap into vascular system of host plant.
+  * Parasitic as NOT beneficial to host
+
+----
+### Water Transport
+#### Transport Pathways and Cohesion Tension theory
+##### Pathways
+* **Apoplastic** transport (dead space):
+  * outside of the plasma membrane: through permeable cellulose **cell wall** and **middle lamellae**
+  * movement through **permeable** cell walls
+* **Symplastic** transport (living space):
+  * "cytoplasmic continuum" between cells, does not cross plasma membrane: through **cytoplasm** and **plasmodesmata**
+  * Plasmodesmata （胞间连丝）
+    * water and dissolved substances can pass through
+    * **Size exclusion** limits
+    * Do not have to pass through semi-permeable plasma membrane
+  * must pass through **semi-permeable** barrier
+* **Transmembrane** Transport (living space):
+  * Movement through semi-permeable plasma membranes: through **cytoplasm**, **plasma membrane** and **cell wall**
+  * plasma membranes are semi-permeable barriers
+    * Diffusion
+    * Facilitated diffusion: transport proteins
+    * Acitve transport: transport proteins and ATP
+    * Endocytosis and exosytosis
+    * Osmosis（渗透）: solute concentraton
+  * must pass **size-exclusion** limit
+* **Casparian strips** (cell wall and midlle lamella reinforced with **suberin** and **lignin**): 
+  * block apoplastic pathway.
+  * in exo- and endodermis
+  * plasmodesmata on front and back of endermal cells facilitate transport into pericycle
+  * water and solutes enter xylem from pericycle via apoplastic pathway; tracheids and/or vessel members are dead at maturity thus no membrane
+  * additional **lignified, secondary walls** to further restrict apoplastic transport
+  * **passage cells**: not secondary wall thickening or casparian strips, allow unrestricted transport at the front and back of cell
+##### Transport in vascular cylinder
+* **Sap**
+  * the fluid transported in xylem (tracheids and vessel members) or phloem (sieve tube elements)
+  * made up water, nutrients and sugars
+  * maple syrup: xylem samp, moving up from storage roots in the spring
+
+| Tracheids | Vessel Members | 
+| --- | --- |
+| vascular plants | angiosperms |
+| narrow (2-10 um) and tapered | Wide (100); short units but can be meters long when stacked into column. transport 100x more water than tracheids |
+|staggered stacking|stacked on top of on another to form "pipes" |
+| closed off and tapered at ends | Perforation plates or open ended at top and bottom, continuous water flow|
+| > |Dead at maturity, thick lignified secondary walls. Provide structural support. Pits on side of vessels allow lateral water and solute flow |
+
+* **Tracheids**: vascular plants
+  * movement is restricted between pits since closed on the end
+  * pits:
+    * **simple pits**: pore formed from absence of secondary wall, primary wall only barrier
+    * **Bodered pits**: have secondary wall extending over opening and a torus that functions like a hydraulic valve
+    * **torus** helps block movement of gases and pathogenic microorganism
+##### Cohesion-Tension theory
+* explain water transport in they xylem
+* **Adhesion**: attraction between different kinds of molecules (most important): water adher to cellulose walls of xylem tracheids and vessels, forming water column
+* **Cohesion**: attraction between molecules of the same kind: water are ploar and bind to each other (hydrogen bonds), further supports water column
+* **Tension**: negative pression on water or solutions which draws water upward, crated by transpiration（蒸腾作用）
+* Cavitation （空化）:
+  * Tracheids and vessel elements have thick, lignified secondary wall to withstand tension generated from negative pressire
+  * greater tension increases the risk of breakage of water column; trunks of trees can contract from tension like a straw
+  * Formation of air bublles or ice crystals known as **embolism** can break the water column
+  * Breakage occurs less in tracheids than vessle elements because of their anatomical difference
+    * water less supported by vessle member walls: wider, air bubble easier
+    * Embolisms form separately in each tracheid; have to move through pits, lateral flow
+    * In vessel members, entire column fills with air or ice when cavitation occurs
+  * Embolisms block water flow: from when flower stems are cut => remove by cutting of the lower 3cm of the stem, underwater
+#### Osmosis and Water potential
+* Principles of water movement: controlled by three processes
+##### Bulk flow 
+* molecules of water move in mass from one place to another in response to differences in potential energy
+##### diffusion
+* the spontaneous movement of water down a concentration gradient
+##### Osmosis
+* movement of water or any solvent across a selectively permeable membrane
+* across plasma membrane facilitated by **aquaporins**
+* spontaneously from lower solute concentration (higher water concentration) to high (low)
+* **Hypotonic solutions**: the solution surrouding the cells has a lower concentration of solutes
+  * water into cell, cell wall prevents cell rupture, ideal condition for plant
+* **Isotonic solutions**: same concentration: (dynamic) euquilibrium but the cell is NOT turgid
+* **Hypertonic solutions**: higher
+  * water out, plasma membrane shrinks (**plasmolysis**), symplastic transport impaired. Unusual to see in nature, typically in laboratory settings
+* **Water potential**
+  * measure ment that predicts which way water will flow between a plant cell and its surroundings or between different parts of the plant (root/shoot)
+  * $$\Psi_w = \Psi_\pi + \Psi_p$$
+    * $\Psi_\pi = \text{osmotic potential}$
+      * always -ve
+    * $\Psi_p = \text{pressure potential (turgor pressure)}$ 
+      * based on mechanical pressure
+      * as water enters vacuole, pressure against wall (it) increases
+      * always +ve
+    * most living cells: 0 or -ve (hypotonic)
+  * Relative water potential
+    * determining direction of flow
+    * more and more -ve as water moves up from soil to leaves
+
+#### Transpiration
+* release of water vapour into the air from aerial organs
+* functions:
+  * cools leaves heated by sunlight
+  * pulls water and water-soluble minerlas up from teh roots
+* tree: 700-3500 liters of water/day, corn: 2L/day
+* **Stomata**:
+  * 90% transpiration occurs through
+  * occurs at highest density on the underside of leaves
+  * \> 1% of the leaf surface area
+  * can be found on all aerial (above ground) organs
+  * controlled through turgor pressure of guard cells
+    * Open: turgid guard cells, K+ enter and water follows
+    * Close: Flaccid guard cells: K+ exit and water follows
+  * Signal varies: water status, CO2 levels, light intensity, humidity, temperature and hormones
+* **Lenticels**
+  * pores, cannot open/close
+  * aren't as high up in water column (stems/trunks) as leaves, only account for 0.1% of overall transpiration in a plant
+  * In fruits (apple, mango, pear and avocado), lenticels form from stomata => can account for 20$ of overall transpiration in plant
+  * allows very little water loss (5%)
+  * reduce water loss (in arid env) by:
+    * Thicker cuticles
+    * Mesophyll packed closer together, no air soaces
+    * sunken stomates to reduce evaporation
+    * increased layers of epidermis
+    * only open stomata at night
 ### Vascular
+
+* Xylem: transports water and nutrients from the roots to stems and leaves. Complex tissue that can be made of the following:
+  * **Parenchyma** (ALIVE at maturity)
+  * **Sclerenchyma** (DEAD)
+  * **Vessel members** (angiosperm): DEAD, short and have perforation plates and pits
+  * **Tracheids** (ferns, gymnosperms and angiosperm): DEAD, have pits but not perforation plates
+* Phloem: Distributes products of photosynthesis to rest of plant
+  * **Parenchyma**
+  * **Sieve Tube Members and Companion Cells**: Tube are ALIVE but lack nucleus and are assoiciated with companion cells to form **Sieve Tube Element**. Sieve tube memebrs have **sieve plates** on either end.
+* Cambium
+  * Layer of dividing cells between xylem and phloem responsible for the secondary growth of stems and roots.

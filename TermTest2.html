@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dermal</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension dendron.dendron */
+@font-face {
+  font-family: "fontello";
+  src: url("../font/fontello.eot?7840610");
+  src: url("../font/fontello.eot?7840610#iefix") format("embedded-opentype"),
+    url("../font/fontello.woff2?7840610") format("woff2"),
+    url("../font/fontello.woff?7840610") format("woff"),
+    url("../font/fontello.ttf?7840610") format("truetype"),
+    url("../font/fontello.svg?7840610#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?7840610#fontello') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-link:before {
+  content: "\e800";
+} /* '' */
+
+.memo-markdown-embed {
+  /* border: 1px solid #ddd; */
+  /* border-radius: 6px; */
+  /* padding: 5px 20px 15px 20px;
+  margin: 0 20px; */
+  border-bottom: dashed thin;
+  position: relative;
+}
+
+.memo-markdown-embed-title {
+  height: 36px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 26px;
+  line-height: 42px;
+  top: 5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 900;
+}
+
+.memo-markdown-embed-link {
+  border-bottom: dashed thin;
+  /* position: absolute;
+  top: 6px;
+  right: 12px; */
+  /* /cursor: pointer; */
+  /* //float: right; */
+}
+
+.memo-markdown-embed-link i {
+  font-size: 18px;
+  color: #535353;
+}
+
+.memo-markdown-embed-link:hover i {
+  color: #000000;
+}
+
+.vscode-dark .memo-markdown-embed-link:hover i {
+  color: #ffffff;
+}
+
+.memo-markdown-embed-content {
+  /* max-height: 500px; */
+  /* overflow-y: auto;
+  padding-right: 10px; */
+}
+
+.memo-invalid-link {
+  color: #cc0013 !important;
+  cursor: not-allowed;
+}
+
+.memo-cyclic-link-warning {
+  text-align: center;
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h3 id="dermal">Dermal</h3>
+<h4 id="periderms-and-epidermis">Periderms and epidermis</h4>
+<h3 id="ground">Ground</h3>
+<h4 id="bulk-of-plant-body-tissues-that-are-not-dermal-or-vascular">Bulk of plant body, tissues that are not dermal or vascular</h4>
+<ul>
+<li>Photosynthesis, storage and support</li>
+<li><strong>cortex</strong>: between dermal and vscular tissues</li>
+<li><strong>pith</strong>: in vascular cylinder</li>
+</ul>
+<ol>
+<li><strong>Parenchyma</strong>: general purpose cells of the plant, alive at maturity
+<ul>
+<li>most common and least specialized</li>
+<li><strong>Where</strong>: majority of ground tissue in leaves, stems, roots, flowers and fruits</li>
+<li><strong>Appearance</strong>: Polyhedral, large, thin and primary walls, highly vacuolated(bubbles)</li>
+<li><strong>Funtion</strong>: photosynthesis, storage, structure and transportation</li>
+<li>Also vascular tissue</li>
+</ul>
+</li>
+<li><strong>Collenchyma</strong>: Provide flexible support, alive at maturity
+<ul>
+<li><strong>Where</strong>: leaves, petioles and stems but rarely in roots</li>
+<li><strong>Apperance</strong>:
+<ul>
+<li>unevenly (irregular) thick primary walls (lack secondary walls)</li>
+<li>Usually located directly beneath eprdermis in discrete bundles or a ring</li>
+<li>Usually elongated and various shapes</li>
+</ul>
+</li>
+<li><strong>Function</strong>: flexible mechanical support
+<ul>
+<li>more collenchy in response to mechanical stressors</li>
+<li><strong>Turgor pressure</strong>: parenchyma and collenchyma provide support by water content in vacuole
+<ul>
+<li><strong>turgid</strong> or swollen when full of water (high turgor pressure)</li>
+<li><strong>Wilting</strong> is a physical symptom of loss of water in vacuole</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Sclerenchyma</strong>: rigid support with lignin reinforced secondary walls, dead at maturity
+<ul>
+<li>Abundance of sclerenchyma &lt;=&gt; increased plant size</li>
+<li>in regions where growth has stopped and flexibility not required</li>
+</ul>
+<ol>
+<li><strong>Fiber</strong>:
+<ul>
+<li><strong>Where</strong>: associate with vascular tissue, found in stems, tree trunks.</li>
+<li><strong>Appearance</strong>:
+<ul>
+<li>elongated with thick cell walls (secondary wals fortified with lignin)</li>
+<li>can be 0.05mm wide and 70mm long</li>
+<li>clustered in groups</li>
+</ul>
+</li>
+<li><strong>Function</strong>: Provide mechanical support and protection for surrounding cells</li>
+</ul>
+</li>
+<li><strong>Sclereids</strong>:
+<ul>
+<li><strong>Where</strong>: Associated with vascular tissue. In leaves and hard shells and nuts (fruit pits)</li>
+<li><strong>Appearance</strong>:
+<ul>
+<li>NOT elongated</li>
+<li>various shape determined by adjacent air spaces, often cubical or spherical. (Astrosclereids star shaped)</li>
+<li>lignin fortified secondary walls</li>
+</ul>
+</li>
+<li><strong>Function</strong>: mechanical support and protection for surrouding cells</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="stem-function-and-anatomy">Stem Function and Anatomy</h3>
+<ul>
+<li>
+<p><strong>shoot</strong>: A stem and its leaves</p>
+</li>
+<li>
+<p><strong>Functions</strong>:</p>
+<ul>
+<li>conducting water, minerals, and organic molecules between roots and leaves</li>
+<li>supporting the weight of leaves</li>
+<li>moving leaves towards light and away from shade</li>
+<li>withstanding wind and other mechanical stressors</li>
+<li>storage and reproduction in specialized stems</li>
+</ul>
+</li>
+<li>
+<p>seed:</p>
+<ul>
+<li>seed coats, cotyledon(子叶, embryonic leaf), endosper(store food), Hypocotyl(embryo stem?)</li>
+<li>Plumule(embryonic shoot) in monocot, but only future location of that in dicot seed.</li>
+</ul>
+</li>
+<li>
+<p><strong>Meristem</strong>: small populations of rapidly proliferating(dividing) cells =&gt; produce all matrure organs of a vasular plants</p>
+<ul>
+<li>often protected by <strong>bud scales</strong> and leaf primordia (embryonic leaves)</li>
+<li><strong>SAM</strong>: shoot apical meristem
+<ul>
+<li>Grow in length (cells dividing below growing point)</li>
+<li>Located at <strong>primary stem tip (terminal end)</strong></li>
+<li>dormant before growing season</li>
+</ul>
+</li>
+<li><strong>Axillary buds</strong>:
+<ul>
+<li>contain bud primordia (meristems)</li>
+<li>Grow outwards, forming leaves/flowers/branches from meristems in it.</li>
+<li>located along <strong>internodes</strong>: space between leaf attachment points</li>
+<li>leaves are attached to stems at <strong>nodes</strong></li>
+<li>Dormant axillary buds located between the stem and the leaf petiole become branches, leaves or flowers</li>
+<li><strong>stupules</strong>: paired, leaf-like appendages at base of leaf.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Specialized stems:</p>
+<ul>
+<li><strong>tendrils</strong>: fastening to surfaces (cucumber, Boston ivy)</li>
+<li><strong>Stolons(runners)</strong>: horizontal stems that grow above ground and have long internodes (strawberry). Vegetative reproduction</li>
+<li><strong>Bulb</strong>: large buds with fleshy leaves attached to short stem (onion, tulips)</li>
+<li><strong>Corms</strong>: resemble bulbs, almost entirely made up of stem tissue, with paperly leaves (crocus, gladiolus)</li>
+<li><strong>Cladophylls</strong>: flattened, leaf-like stems (orchids, prickly pear cactus)</li>
+</ul>
+</li>
+<li>
+<p>Vascular tissue Patterns:</p>
+<ul>
+<li><strong>protostele</strong>:
+<ul>
+<li>solid xylem core, phloem surrounds xylem, cortex, epidermis =&gt; earliest plants and some SVP</li>
+<li><strong>siphonosteles</strong>: Pith, phloem, xylem, phloem, cortex, epidermis. Commin in ferns.</li>
+<li><strong>Eusteles</strong>: Epidermis, cortex, vascular bundle (phloem, xylem), pith
+<ul>
+<li>some dicots and some gymnosperms: tight ring</li>
+<li>most dicots and some gymnosperms: loose ring</li>
+<li><strong>Vascular bundles</strong>:
+<ul>
+<li>Collateral (sunflower): fiber, phloem, xylem</li>
+<li>Bicollateral (cucumber) phloem, xylem, phloem</li>
+</ul>
+</li>
+<li><strong>Atactostele</strong>: vascular bundles scattered, variation of eustele
+<ul>
+<li><strong>most monocots</strong></li>
+<li>two large vessels with several smaller ones, an air space, sieve tubes and companion cells</li>
+<li>surrounded by schlerenchyma sheath</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="monocots-and-dicots">Monocots and Dicots</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Dicot Angiosperms</th>
+<th>Monocot Angiosperms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>seed</td>
+<td>Two cotyledons</td>
+<td>One cotyledon</td>
+</tr>
+<tr>
+<td>flower</td>
+<td>mostly primitive</td>
+<td>mostly advanced</td>
+</tr>
+<tr>
+<td>Flower parts</td>
+<td>multiples of 4 or 5</td>
+<td>multiples of 3</td>
+</tr>
+<tr>
+<td>leaves</td>
+<td>reticulate veins, petiole</td>
+<td>parallel primary veins, sessile, leaf sheath</td>
+</tr>
+<tr>
+<td>root</td>
+<td>tap root, pith</td>
+<td>fibrous root</td>
+</tr>
+<tr>
+<td>vascular bundle</td>
+<td>eustele loose ring</td>
+<td>atactostele, scattered</td>
+</tr>
+<tr>
+<td>cambium</td>
+<td>vasc &amp; cork present (primary and secondary growth)</td>
+<td>vasc absent (predominantly primary growth)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Seed:
+<ul>
+<li>2 cotyledons in dicot</li>
+<li>1 cotyledon in monocot</li>
+</ul>
+</li>
+<li>Shoots: (<strong>MANY EXAMPLES ON SLIDES</strong>)
+<ul>
+<li>Dicot:
+<ul>
+<li>broad leaves, <strong>reticulate veins</strong>, <strong>petiole</strong></li>
+<li><strong>Deciduous trees and shrubs</strong>: oak, maple..</li>
+</ul>
+</li>
+<li>Monocot:
+<ul>
+<li>narrow leaves, <strong>parallel primary veins</strong>, sessile (direct) attachment. <strong>Leaf sheath</strong> wrapped around stem</li>
+<li><strong>Warm climate trees</strong>: palms</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Flower:
+<ul>
+<li>Dicot: most primitive flowers, multiples of 4 or 5</li>
+<li>Monocot: most advanced flowers, multiples of 3</li>
+</ul>
+</li>
+<li>Vascular seed plant stems:
+<ul>
+<li><strong>Gymnosperm</strong>: Eustele with tight rings</li>
+<li>Dicot: Eustele</li>
+<li>Monocot: Atactostele</li>
+</ul>
+</li>
+<li>roots:
+<ul>
+<li><strong>Gymno</strong>/dicot: Epidermis, exodermis, cortex, endodermis, pericycle, primary phloem, primary xylem, <strong>Fibrous root systems</strong></li>
+<li>Monocot: Epi, exo, cortex, endo, pericycle, px, pp, <strong>pith</strong>, <strong>tap root system</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="primary-growth-in-shoots-and-roots">Primary growth in shoots and roots</h3>
+<ul>
+<li>increase of <strong>length</strong> by cellular division of the apical meristem</li>
+<li>meristems present in ALL plants (mosses to seed plants)</li>
+<li><strong>SAM/RAM</strong>: length. Stem outwards in <strong>axillary buds</strong>, roots branch with <strong>lateral roots</strong> (pericycle).</li>
+<li><strong>initials</strong>: cells of meristem. totipotent. mitosis to daughter cells, differentiation to derivative cells (or go back to initial?)</li>
+<li><strong>SAM</strong>:
+<ul>
+<li>stem, leaves and flowers.</li>
+<li>dividing cells are small, dense with sytoplasm. Mature, differentiated cells are larger and highly vacuolated.</li>
+</ul>
+</li>
+<li><strong>LAB5: overwintering</strong>:
+<ul>
+<li><em>Bundle scars</em> mar the vascular (conduction) tissue with leaf scars</li>
+<li><em>Deciduous</em> trees and shrubs lose all leaves annually. After leaves fall, have dormant axillary buds with leaf scars below.</li>
+</ul>
+</li>
+<li><strong>RAM</strong>:
+<ul>
+<li>resides in quiescent center of root tip</li>
+<li>each lateral root has their own RAM</li>
+</ul>
+</li>
+</ul>
+<h3 id="secondary-growth-vascular-cambium-in-shoots">Secondary Growth (Vascular cambium) in shoots</h3>
+<ul>
+<li>
+<p>An increaset in <strong>girth</strong> generated by cell divisions of <strong>lateral meristems</strong></p>
+</li>
+<li>
+<p>observed in <strong>stems</strong> and <strong>roots</strong> of woody plants</p>
+</li>
+<li>
+<p>All gymnosperms, some perennial tree and shrub angiosperms (20% of dicots and 5% of monocots)</p>
+</li>
+<li>
+<p><strong>Lateral meristems</strong> form in regions of maturation in stems and roots that have completed growing in length</p>
+</li>
+<li>
+<p>Cylindrical and <strong>radial expansion</strong></p>
+</li>
+<li>
+<p>Why needed?</p>
+<ul>
+<li>Most angiosperms do not have or need secondary growth.</li>
+<li>Annual plants -&gt; NO</li>
+<li>increase conduciton and support</li>
+<li>replace old tissues so do not have to maintain over hundreds of years</li>
+</ul>
+</li>
+<li>
+<p>Secondary xylem and phloem</p>
+<ul>
+<li><strong>Xylem</strong>: water conducting tissue 'root to shoot.</li>
+<li><strong>Phloem</strong>: metabolite conducting tissue 'shoot to root'</li>
+<li>function the same as primary</li>
+<li>secondary xylem tends to have <strong>thicker walls</strong> due to increase in <strong>lignin</strong> content</li>
+<li>lignin 2nd most common organic compound on Earth</li>
+</ul>
+</li>
+<li>
+<p>Wood = secondary xylem</p>
+<ul>
+<li>largely of dead cells, tracheids or vessel members</li>
+<li>highly lignified</li>
+<li>only the more recently formed layers of secondary xylem conduct water and minerals.</li>
+<li>primary and older secondary xylem become inactive
+<ul>
+<li>Dicots form <strong>hardwood</strong>: xylem are made of fibers and vessels (hard, more lgnin)</li>
+<li>Conifer form <strong>softwood</strong>: xylem consists primarily of tracheids (softer, less lignin)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Secondary phloem</p>
+<ul>
+<li>only more recent layers of living secondary phloem conduct photosynthetic products</li>
+<li>promary and older secondary phloem become stretched and broken as vascular cambium push them outward (bark)</li>
+</ul>
+</li>
+<li>
+<p>Growth patterns (ring)/dendrochronology</p>
+<ul>
+<li>size of cells varies with season: small in later summer (<strong>summerwood</strong>/late wood), large in the spring (<strong>spring wood</strong>/early wood)</li>
+<li>stress = less growth</li>
+<li><strong>Heartwood</strong>: older, non-conducting rings of xylem in the center of the trunk or root. Usually darker</li>
+<li><strong>Sapwood</strong>: outer xylem rings that still conduct water and minerals.</li>
+<li><strong>Antibacterial</strong> and <strong>antimicrobial</strong> compounds are produced by parenchyma
+<ul>
+<li>Antimicrobials: Resin
+<ul>
+<li><strong>Pine</strong> and <strong>nonflowering</strong> plants.</li>
+<li>Flow through <strong>resin canals</strong> in secondary xylem and phloem, periderm and leaves.</li>
+</ul>
+</li>
+<li>Latex
+<ul>
+<li><strong>10 % of flowering</strong> plants produce <strong>latex</strong>(乳胶)</li>
+<li>blocks entry of pathogens, contains compounds with growth inhibitory properties</li>
+<li>deter insect and animal predators</li>
+<li>produced in vessel or special cells called <strong>laticifers</strong>, network not as visible as resin canals</li>
+<li>close to surface, released upon injury</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Lateral Meristems (<strong>Cambium</strong>)</p>
+<ul>
+<li>Vascular cambium
+<ul>
+<li>secondary xylem (wood) &amp; secondary phloem (bark)</li>
+<li>Forms from dedifferentiated cortex and procambium</li>
+<li>produces secondary xylem and secondary phloem in between primary xylem and primary phloem</li>
+<li><strong>Auxin hormone</strong> signals the formation of vascular cambium from (in dicot and conifer stems):
+<ul>
+<li><strong>Fusiform initials</strong>: cells derived from residual procambium cells located between primary xylem and phloem</li>
+<li><strong>Ray Initials</strong>: arise from parenchyma cells or cortex (ground tissue) between vascular bundles</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cork cambium (Phellogen)
+<ul>
+<li>Two types of dermal tissu: <strong>epidermis</strong> and <strong>periderm</strong></li>
+<li>During secondary growth, <strong>cork cambium</strong> (phellogen) replaces epidermis and cortex with <strong>periderm</strong> (cork, cork cambium, phelloderm)</li>
+<li><strong>cork(phellem)</strong>: forms to the outside of the cork cambium. Consists of dead cells when mature</li>
+<li><strong>phelloderm</strong>: forms to inside and consists of thin layer of living parenchyma cells</li>
+<li>Expansion of cortex causes cortex to break apart and fall off stem.</li>
+<li>Subsequent cork cambia arise from secondary phloem to the inside</li>
+</ul>
+</li>
+<li>Bark = <strong>Periderm</strong>
+<ul>
+<li>consists of all tissues external to the vascular cambium
+<ul>
+<li><strong>Inner bark</strong>
+<ul>
+<li>living secondary phloem, vascular cambium, inner most cork cambium and any remaining cortex</li>
+<li><strong>carries sugar</strong> and other organic molecules</li>
+</ul>
+</li>
+<li><strong>Outer bark</strong>
+<ul>
+<li>dead tissue (includes dead secondary phloem, all layers of periderm outside of most recent cork cambium)</li>
+<li>provides protection from abiotic and biotic stress</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bark is typically thinner than the woody portion of stem. Essential for tree viability</li>
+<li>Pattern variable but characteristic for different species</li>
+<li>Bark = protection
+<ul>
+<li>preventing water loss and infection by pathogenic organisms and predation</li>
+<li>cork cambium cannot grow in diameter, must reform inside the old one (toward a source of water and nutrients)</li>
+<li>cork cells enlarge and become impregnated with <strong>suberin</strong></li>
+</ul>
+</li>
+<li><strong>Suberin</strong>
+<ul>
+<li>a complex polyester bioplymer that is lipophilic</li>
+<li>in stems and roots, barrier of water and solutes.</li>
+<li>make cork cells water proof</li>
+<li>nothing gets in, nothing gets out</li>
+</ul>
+</li>
+<li>Gas Exchange
+<ul>
+<li><strong>lenticels</strong> are small openings in outer bark of stems and roots that allow gas exchange in tissue blocked by suberin coated cork cells</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Antimicrobials
+<ul>
+<li><strong>Resin</strong></li>
+</ul>
+</li>
+<li><strong>Dedifferentiate</strong>
+<ul>
+<li>From derivative cell</li>
+<li>can be observed in vegetative propagation (asexual reproduction)</li>
+</ul>
+</li>
+<li>More secondary xylem is produced than phloem. Phloem produced before xylem.</li>
+</ul>
+</li>
+<li>
+<p>Monocot: no vascular cambium, no true secondary growth. Only thicking of ground tissue, no annaul growth rings.</p>
+</li>
+</ul>
+<hr>
+<h3 id="leaves-and-epidermis">Leaves and Epidermis</h3>
+<ul>
+<li>Most dicot mature leaves have:
+<ul>
+<li>petiole</li>
+<li>flattened blade (lamina)</li>
+<li>network of vascular bundles</li>
+<li>stipules at base of petiole</li>
+</ul>
+</li>
+<li>Pattern
+<ul>
+<li>parallel veins in monocots and gymnosperms</li>
+<li>Netted or reticulate veins in dicots and ferns</li>
+</ul>
+</li>
+<li>phyllotaxy
+<ul>
+<li>Alternate: one leaf per node
+<ul>
+<li>Distichous for non spiral?</li>
+</ul>
+</li>
+<li>Opposite: Two leaves per node (Decussate?)</li>
+<li>Whorled: Three or more leaves at a node (Verticillate?)</li>
+<li>Leaf primordia form from meristem in pattern that determines phyllotaxy of mature organs.</li>
+</ul>
+</li>
+<li>Abscission (落叶？)
+<ul>
+<li>Deciduous plants drop(abscise) leaves seasonally</li>
+<li>abscission zone near base of petiole</li>
+</ul>
+<ol>
+<li>Protective layer of cells coated and impregnated with suberin to seal off leaf scar</li>
+<li>Separation layer of pectins in the middle lamella are broken down by enzymes, at petiole and stem border</li>
+</ol>
+</li>
+<li>Internal structures
+<ul>
+<li><strong>Epidermal tissue</strong>: protection and gas exchange
+<ul>
+<li>Devoid of chloroplasts</li>
+<li>Coated with <strong>Cuticle</strong> and <strong>Surface waxes</strong> provide protection from water loss, light irradiation and pathogen attack</li>
+<li>The surface waxes also serve as a semi-permeable barrier and regulate gas exchange and evaporation of water</li>
+<li><strong>Trichome hairs</strong> control moisture loss and predation
+<ul>
+<li>uni- or multi cellular outgrowths of the epidermis</li>
+<li>primary function is <strong>plant defence</strong>, particularly against insects</li>
+<li>can be simple physical barriers and deterrents to insect movement OR can be glands secreting essential oils
+<ul>
+<li><strong>Essential oils</strong>: prevent predation (taste) and act as insect repellant and antimicrobials. -- scent</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Waste materials may accumulate in peridermal cells</li>
+<li><strong>Stomata</strong> for gas exchange:
+<ul>
+<li>lower epidermis cutin perforated by</li>
+<li>regualte <strong>gas exchange</strong> between leaf interior and atmosphere</li>
+<li>more sophisticated than lenticels, can open and close with turgor pressure of <strong>guard cells</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Mesophyll</strong>: photosynthesis
+<ul>
+<li><strong>Palisade mesophyll</strong>
+<ul>
+<li>elongated cells, below upper epidermis, tightly packed</li>
+</ul>
+</li>
+<li><strong>Spongy mesophyll</strong>
+<ul>
+<li>below, loosely pack, air spaces to allow CO2 diffusion</li>
+</ul>
+</li>
+<li>Both involved in photosynthesis, contain chloroplasts</li>
+<li>Monocot do not have differentiated palisade and spongy layers.
+<ul>
+<li>often have <strong>bulliform</strong> cells flanking the central vein, partly collapse under dry conditions, causing leaf to fold and reducing transpiration.</li>
+</ul>
+</li>
+<li><strong>Vascular tissue</strong>: form veins to transport organic molecules, water and minerals between leaves and the rest of the plant.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Specialized leaves
+<ul>
+<li><strong>Succulent</strong>: (water) storage
+<ul>
+<li>parenchyma cells with large vacuoles for water storage</li>
+<li>often found in desert(arid) plants</li>
+<li>leaves appear swollen and have shiny appearance due to thick waxy cuticle</li>
+</ul>
+</li>
+<li><strong>Spines</strong>: Defence
+<ul>
+<li>reduce leaf surface and water loss, protect from herbivory</li>
+<li><strong>NOT</strong> spelized leaves
+<ul>
+<li><strong>Throns</strong>: modified stems arising from leaf axils</li>
+<li><strong>Prickles</strong>: outgrowths from epidermis or cortex</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Floral leaves</strong>: Bracts
+<ul>
+<li>bases of flowers or flower stalks, <strong>Poinsettia</strong> and <strong>Clary's sage</strong></li>
+</ul>
+</li>
+<li>Nutrients and Reproduction: <strong>Flower-pot leaves</strong></li>
+<li>Insect trapping: <strong>Venus fly traps</strong>, <strong>Sundews</strong>, and <strong>Pitcher plants</strong>
+<ul>
+<li>Grow in nitrogen and mineral deficient soils such as swampy areas and bogs. Obtain nutrients from digesting insects.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="roots">Roots</h3>
+<h4 id="structure-and-functions">Structure and functions</h4>
+<h5 id="functions">Functions</h5>
+<ul>
+<li><strong>vascular transport</strong>: Conduit of vascular cylinder (stele): xylem and phloem
+<ul>
+<li>Xylem: water conducting tissue (root to shoot)</li>
+<li>Phloem: food conducting tissue (shoot to root)</li>
+</ul>
+</li>
+<li><strong>Absorption</strong> of water and nutrient minerals (N, P, K)</li>
+<li><strong>Anchor</strong> (stablize) plants into soil</li>
+<li><strong>storage</strong> of water or food</li>
+<li>Aide in <strong>Asexual Reproduction</strong></li>
+<li><strong>Produce hormones</strong> and <strong>Secondary metabolits</strong> that regulate plant development and communication</li>
+</ul>
+<h5 id="systems">Systems</h5>
+<ul>
+<li><strong>Embryo radicle</strong> emerges immediately upon germination, from this radicle a <strong>primary root</strong> forms, then secondary root.</li>
+<li><strong>Firous</strong>: found in <strong>monocots</strong> and some dicots
+<ul>
+<li>large number of fine roots of similar diameter</li>
+<li><strong>Adventitious roots</strong> form from stem or leaf</li>
+<li><strong>Lateral roots</strong> form from adventitious roots</li>
+<li>typically shallow</li>
+<li>imcreased number of roots lead to improved water acquisition; not drought tolerant</li>
+<li>stabilize soil, decrease erosion</li>
+<li>core of parenchyma cells (<strong>pith</strong>) is surrounded by <strong>rings of xylem and phloem</strong> in monocot root. pith cells arise from procambium and not ground meristem. in Monocot</li>
+</ul>
+</li>
+<li><strong>Tap root</strong>: in <strong>dicots</strong> and <strong>gymnosperms</strong>
+<ul>
+<li>thick <strong>tap root</strong>, and thinner <strong>secondary roots</strong> form from that.</li>
+<li>deep into soil</li>
+<li>not as effective at water absorption as fibrous root systems, but allow survive under extreme conditions.</li>
+<li><strong>water or food storage</strong> in dicots</li>
+<li>&quot;arms&quot; of xylem with phloem patches in between, <strong>no pith</strong></li>
+</ul>
+</li>
+<li>Root specialization: <strong>water storage</strong>: pumpkin family</li>
+<li>Root specialization: <strong>Food storage</strong>:
+<ul>
+<li><strong>starch (carbonhydrate)</strong>: sweet potatoes, cassava, hemlock and dandelions</li>
+<li>storage cells are increased number of <strong>parenchyma</strong>, formed by <strong>anomalous secondary</strong> (thickening) growth</li>
+</ul>
+</li>
+</ul>
+<h5 id="external-structure">external structure</h5>
+<ul>
+<li>General structures
+<ul>
+<li><strong>Lateral Roots</strong>: from pericycle</li>
+<li><strong>Root hairs</strong>: epidermal cell extensions, absorption of water and nutrients
+<ul>
+<li>Adhere tightly to soil particles in order to compete for water and nutrients</li>
+<li>Increase total surface area of absorption</li>
+<li>In growing roots, new root hairs are continuously formed with older root hairs dying off; root hairs always in zone of maturation near root cap.</li>
+</ul>
+</li>
+<li><strong>Root cap</strong>: mass of parenchyma cells that cover teach root tip
+<ul>
+<li>protect tissues from damage as root grows, first cell layer has <strong>waxy cuticle</strong></li>
+<li>Secretes mucilage that aides in growth through soil and provides medium for beneficial bacteria</li>
+<li>Amyloplasts in tip act as gravity sensors</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>12 Essential nutrient elements</strong>:
+<ul>
+<li>root compete with negatively charged soil silicates for minerals and water</li>
+<li>Macronutrients:
+<ul>
+<li>primary: Nitrogen, phosphor, potassium</li>
+<li>intermediate: sulpher, calcium, magnesium</li>
+</ul>
+</li>
+<li>Micronutrients: Iron, zinc, manganese, molybdenum, copper, boron</li>
+</ul>
+</li>
+<li>Root Protection Permeability
+<ul>
+<li>prevent microorganism in soil from getting into root vascular cylinder</li>
+<li><strong>Chemical Protection</strong>
+<ul>
+<li>woody gymnosperm roots have resin canals and dicot taproots produce latex</li>
+<li>Polyphenol <strong>flavonoids</strong> with anti-funggal, anti-viral and anti-microbial properties accumulate in root cell vacuoles (eg. <strong>Glabridin flavonoid</strong> of licorice (Glycyrrhiza sp.) root has great pharmaceutical significance as an anti-bac, anti-inflammatory and anti-cancer agent)</li>
+</ul>
+</li>
+<li>Root Hair
+<ul>
+<li>epidermal root hairs <strong>do not have a cuticle</strong> to aide in absorption</li>
+<li><strong>cell walls are permeable</strong> to water, solutes and potentially invasive microorganisms without cuticle</li>
+<li>impregnate key cell layers of cortex with <strong>suberin</strong> and <strong>lignin</strong> to restrict water and solute movement</li>
+<li><strong>casparian strips</strong>: deposits of lignin and suberin in the radial primary cell wall and middle lamella of endodermis and exodermis</li>
+</ul>
+</li>
+<li><strong>Endodermis</strong> (all vascular plants) and <strong>Exodermis</strong> (majority)
+<ul>
+<li>both are part of root cortex and have <strong>Casparian strips</strong></li>
+<li>Exo: <strong>outermost</strong> cell layer of cortex</li>
+<li>Endo: <strong>innermost</strong>, above pericycle and vascular cylinder</li>
+<li><strong>Passage cells</strong>: lack casparian strips, allow fast passive transport, not always present</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Mycorrhizae mutualistic Relationships
+<ul>
+<li>&gt;70%, mycorrhizae essential for development</li>
+<li><strong>Mutualistic relationship</strong>: both benefit and dependent
+<ul>
+<li>Fungi: facilitate absorption, particularly P</li>
+<li>plants provides protection, sugars and amino acids</li>
+</ul>
+</li>
+<li><strong>Ectomycorrhizae</strong>:
+<ul>
+<li>Fungi on surface, forming <strong>mantle</strong> around root</li>
+<li>accumulate minerales in mantle coated root hairs (plant)</li>
+<li>solid substrate to grow on (fungi)</li>
+</ul>
+</li>
+<li><strong>Endomycorrhizae</strong>:
+<ul>
+<li><strong>Fungi penerate root cortex</strong>(parenchyma cells)</li>
+<li><strong>Arbuscules</strong>: fungi branching structures</li>
+<li>plant increase absorption of nutrients (Phosphorous)</li>
+<li>fungi provided with food (carbohydrates) and protection</li>
+</ul>
+</li>
+<li>Bacteria root nodules:
+<ul>
+<li>Rhizobia (bacteria) with <strong>Legumes</strong> (Fabaceae)</li>
+<li>Rhizobia: enzymes to convert (fix) <strong>Nitrogen</strong> from atomosphere into plant usable forms (nitrates and ammonia)</li>
+<li><strong>Root Nodules</strong> contain large numbers of nitrogen-fixing bacteria</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="primary-and-secondary-growth">Primary and Secondary Growth</h4>
+<h5 id="root-primary-growth">Root primary growth</h5>
+<ul>
+<li><strong>Region of Cell Division(Root Apical Meristem, RAM)</strong>: in the center of root tip
+<ul>
+<li><strong>Protoderm</strong>: give rise to epidermis</li>
+<li><strong>Ground meristem</strong>: give rise to cortex (parenchyma, exodermis, endodermis)</li>
+<li><strong>Procambium</strong>: give rise to primary xylem, primary phloem and pericycle (vascular cylinder)</li>
+</ul>
+</li>
+<li><strong>Regions</strong>:
+<ul>
+<li><strong>Maturation</strong>: differentiated(mature) cells into distinctive cell types</li>
+<li><strong>Elongation</strong>: cells become several times original length, not differentiated</li>
+<li>matures in retrograde</li>
+</ul>
+</li>
+<li><strong>Pericycle</strong>
+<ul>
+<li>single cell later, directly below <strong>endodermis</strong></li>
+<li>give rise to lateral roots and part of the vascular cambium</li>
+<li>displaces cortex and epidermis as lateral root grows outwards, from vascular cylinder to epidermis</li>
+<li>eventually <strong>break through epidermis</strong></li>
+<li>vascular cylinder stays connected</li>
+</ul>
+</li>
+</ul>
+<h5 id="secondary-root-growth">Secondary Root Growth</h5>
+<ul>
+<li>NO in fibrous</li>
+<li>occurs where primary growth has been compelted</li>
+<li><strong>Dicots and conifer tap roots</strong> have secondary growth to:
+<ol>
+<li>Increase conductivity</li>
+<li>Replace old vascular tissue</li>
+<li>provide protection (periderm = bark)</li>
+<li>Form specialized storage roots by anomalous secondary growth (thickening)</li>
+<li>Provide support in specialized roots</li>
+</ol>
+</li>
+<li><strong>Vascular cambium</strong>
+<ul>
+<li>forms from de-differentiated <strong>parenchyma</strong> between primary xylem and phloem and pericyle, Initiated by hormone <strong>auxin</strong></li>
+<li>forms <strong>continuous ring</strong> of meristemic cells</li>
+<li>primary xy/ph: stars; then secondary: rings</li>
+<li>as in stems: secondary xylem = wood, and less secondary phloem produced</li>
+<li>Xylem rays: living parenchyma, transfer water horizontally across secondary xylem.</li>
+</ul>
+</li>
+<li><strong>Cork cambium</strong>:
+<ul>
+<li>Cork (phellem), cork cambium, Phelloderm</li>
+<li>forms from dedifferentiated parenchyma cortex, then secondary phloem.</li>
+</ul>
+</li>
+<li><strong>Annual Growth Rings</strong>
+<ul>
+<li>hard to distinguish as secondary xylem size does not vary by growing season as in stems</li>
+</ul>
+</li>
+<li>Anomalous secondary thickening: <strong>Food storage</strong>:
+<ul>
+<li>xylem, phloem and parenchyma</li>
+<li>Beets have growth rings: repeating secondary xylem, secondary phloem and storage parenchyma</li>
+</ul>
+</li>
+<li>Root periderm scars
+<ul>
+<li><strong>NOT for gas exchange</strong></li>
+<li><strong>wound response</strong> to lateral root break</li>
+</ul>
+</li>
+</ul>
+<h4 id="specialized-root-function">Specialized root function</h4>
+<ul>
+<li>water and food storage from previous sections</li>
+<li><strong>Asexual Reproduction</strong>: form <strong>adventitious buds</strong> from these <strong>aerial stems (suckers)</strong> form; suckers develop their own roots and can survive independently. (shurbs and fruit trees)</li>
+<li><strong>Gas Exchange</strong>: <strong>pheumatophores</strong> extend above surface ans use <strong>lenticels</strong> to obtain oxygen for respiration (near water or swamps)</li>
+<li><strong>Aerial Roots</strong>: <strong>Epiphytes</strong> such as orchids grow on other plants for support but nourish them selves (not parasite)
+<ul>
+<li><strong>Velamen layer</strong>: epidermis several cel layers thick to reduce water loss</li>
+<li>Epiphyte roots absorb water and nutrients from rain water</li>
+<li>Aerial roots can also aide in climbing (English Ivy)</li>
+</ul>
+</li>
+<li><strong>Aerial (Prop) Roots</strong>: Tropical trees (figs, banyan) have stilt-like <strong>prop roots</strong> that grow down from branches. continue secondary growth to expand radius and stability once they reached ground.</li>
+<li><strong>Additional support</strong>: <strong>Buttress roots</strong> extend from the base of tree trunk to help stabilize tree in shallow soil; common in tropical trees.</li>
+<li><strong>Parasitism</strong>: <strong>Parasitic roots (dobbers)</strong>
+<ul>
+<li>have no chlorophyll and dependent on chlorophyll-bearing plants for nutrition.</li>
+<li>Use peg-like projections (<strong>haustoria</strong>) to tap into vascular system of host plant.</li>
+<li>Parasitic as NOT beneficial to host</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="water-transport">Water Transport</h3>
+<h4 id="transport-pathways-and-cohesion-tension-theory">Transport Pathways and Cohesion Tension theory</h4>
+<h5 id="pathways">Pathways</h5>
+<ul>
+<li><strong>Apoplastic</strong> transport (dead space):
+<ul>
+<li>outside of the plasma membrane: through permeable cellulose <strong>cell wall</strong> and <strong>middle lamellae</strong></li>
+<li>movement through <strong>permeable</strong> cell walls</li>
+</ul>
+</li>
+<li><strong>Symplastic</strong> transport (living space):
+<ul>
+<li>&quot;cytoplasmic continuum&quot; between cells, does not cross plasma membrane: through <strong>cytoplasm</strong> and <strong>plasmodesmata</strong></li>
+<li>Plasmodesmata （胞间连丝）
+<ul>
+<li>water and dissolved substances can pass through</li>
+<li><strong>Size exclusion</strong> limits</li>
+<li>Do not have to pass through semi-permeable plasma membrane</li>
+</ul>
+</li>
+<li>must pass through <strong>semi-permeable</strong> barrier</li>
+</ul>
+</li>
+<li><strong>Transmembrane</strong> Transport (living space):
+<ul>
+<li>Movement through semi-permeable plasma membranes: through <strong>cytoplasm</strong>, <strong>plasma membrane</strong> and <strong>cell wall</strong></li>
+<li>plasma membranes are semi-permeable barriers
+<ul>
+<li>Diffusion</li>
+<li>Facilitated diffusion: transport proteins</li>
+<li>Acitve transport: transport proteins and ATP</li>
+<li>Endocytosis and exosytosis</li>
+<li>Osmosis（渗透）: solute concentraton</li>
+</ul>
+</li>
+<li>must pass <strong>size-exclusion</strong> limit</li>
+</ul>
+</li>
+<li><strong>Casparian strips</strong> (cell wall and midlle lamella reinforced with <strong>suberin</strong> and <strong>lignin</strong>):
+<ul>
+<li>block apoplastic pathway.</li>
+<li>in exo- and endodermis</li>
+<li>plasmodesmata on front and back of endermal cells facilitate transport into pericycle</li>
+<li>water and solutes enter xylem from pericycle via apoplastic pathway; tracheids and/or vessel members are dead at maturity thus no membrane</li>
+<li>additional <strong>lignified, secondary walls</strong> to further restrict apoplastic transport</li>
+<li><strong>passage cells</strong>: not secondary wall thickening or casparian strips, allow unrestricted transport at the front and back of cell</li>
+</ul>
+</li>
+</ul>
+<h5 id="transport-in-vascular-cylinder">Transport in vascular cylinder</h5>
+<ul>
+<li><strong>Sap</strong>
+<ul>
+<li>the fluid transported in xylem (tracheids and vessel members) or phloem (sieve tube elements)</li>
+<li>made up water, nutrients and sugars</li>
+<li>maple syrup: xylem samp, moving up from storage roots in the spring</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Tracheids</th>
+<th>Vessel Members</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vascular plants</td>
+<td>angiosperms</td>
+</tr>
+<tr>
+<td>narrow (2-10 um) and tapered</td>
+<td>Wide (100); short units but can be meters long when stacked into column. transport 100x more water than tracheids</td>
+</tr>
+<tr>
+<td>staggered stacking</td>
+<td>stacked on top of on another to form &quot;pipes&quot;</td>
+</tr>
+<tr>
+<td>closed off and tapered at ends</td>
+<td>Perforation plates or open ended at top and bottom, continuous water flow</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Dead at maturity, thick lignified secondary walls. Provide structural support. Pits on side of vessels allow lateral water and solute flow</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Tracheids</strong>: vascular plants
+<ul>
+<li>movement is restricted between pits since closed on the end</li>
+<li>pits:
+<ul>
+<li><strong>simple pits</strong>: pore formed from absence of secondary wall, primary wall only barrier</li>
+<li><strong>Bodered pits</strong>: have secondary wall extending over opening and a torus that functions like a hydraulic valve</li>
+<li><strong>torus</strong> helps block movement of gases and pathogenic microorganism</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="cohesion-tension-theory">Cohesion-Tension theory</h5>
+<ul>
+<li>explain water transport in they xylem</li>
+<li><strong>Adhesion</strong>: attraction between different kinds of molecules (most important): water adher to cellulose walls of xylem tracheids and vessels, forming water column</li>
+<li><strong>Cohesion</strong>: attraction between molecules of the same kind: water are ploar and bind to each other (hydrogen bonds), further supports water column</li>
+<li><strong>Tension</strong>: negative pression on water or solutions which draws water upward, crated by transpiration（蒸腾作用）</li>
+<li>Cavitation （空化）:
+<ul>
+<li>Tracheids and vessel elements have thick, lignified secondary wall to withstand tension generated from negative pressire</li>
+<li>greater tension increases the risk of breakage of water column; trunks of trees can contract from tension like a straw</li>
+<li>Formation of air bublles or ice crystals known as <strong>embolism</strong> can break the water column</li>
+<li>Breakage occurs less in tracheids than vessle elements because of their anatomical difference
+<ul>
+<li>water less supported by vessle member walls: wider, air bubble easier</li>
+<li>Embolisms form separately in each tracheid; have to move through pits, lateral flow</li>
+<li>In vessel members, entire column fills with air or ice when cavitation occurs</li>
+</ul>
+</li>
+<li>Embolisms block water flow: from when flower stems are cut =&gt; remove by cutting of the lower 3cm of the stem, underwater</li>
+</ul>
+</li>
+</ul>
+<h4 id="osmosis-and-water-potential">Osmosis and Water potential</h4>
+<ul>
+<li>Principles of water movement: controlled by three processes</li>
+</ul>
+<h5 id="bulk-flow">Bulk flow</h5>
+<ul>
+<li>molecules of water move in mass from one place to another in response to differences in potential energy</li>
+</ul>
+<h5 id="diffusion">diffusion</h5>
+<ul>
+<li>the spontaneous movement of water down a concentration gradient</li>
+</ul>
+<h5 id="osmosis">Osmosis</h5>
+<ul>
+<li>movement of water or any solvent across a selectively permeable membrane</li>
+<li>across plasma membrane facilitated by <strong>aquaporins</strong></li>
+<li>spontaneously from lower solute concentration (higher water concentration) to high (low)</li>
+<li><strong>Hypotonic solutions</strong>: the solution surrouding the cells has a lower concentration of solutes
+<ul>
+<li>water into cell, cell wall prevents cell rupture, ideal condition for plant</li>
+</ul>
+</li>
+<li><strong>Isotonic solutions</strong>: same concentration: (dynamic) euquilibrium but the cell is NOT turgid</li>
+<li><strong>Hypertonic solutions</strong>: higher
+<ul>
+<li>water out, plasma membrane shrinks (<strong>plasmolysis</strong>), symplastic transport impaired. Unusual to see in nature, typically in laboratory settings</li>
+</ul>
+</li>
+<li><strong>Water potential</strong>
+<ul>
+<li>measure ment that predicts which way water will flow between a plant cell and its surroundings or between different parts of the plant (root/shoot)</li>
+<li>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi mathvariant="normal">Ψ</mi><mi>w</mi></msub><mo>=</mo><msub><mi mathvariant="normal">Ψ</mi><mi>π</mi></msub><mo>+</mo><msub><mi mathvariant="normal">Ψ</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\Psi_w = \Psi_\pi + \Psi_p
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord">Ψ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02691em;">w</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord">Ψ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord">Ψ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Ψ</mi><mi>π</mi></msub><mo>=</mo><mtext>osmotic potential</mtext></mrow><annotation encoding="application/x-tex">\Psi_\pi = \text{osmotic potential}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord">Ψ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">osmotic potential</span></span></span></span></span>
+<ul>
+<li>always -ve</li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Ψ</mi><mi>p</mi></msub><mo>=</mo><mtext>pressure potential (turgor pressure)</mtext></mrow><annotation encoding="application/x-tex">\Psi_p = \text{pressure potential (turgor pressure)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord">Ψ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">pressure potential (turgor pressure)</span></span></span></span></span>
+<ul>
+<li>based on mechanical pressure</li>
+<li>as water enters vacuole, pressure against wall (it) increases</li>
+<li>always +ve</li>
+</ul>
+</li>
+<li>most living cells: 0 or -ve (hypotonic)</li>
+</ul>
+</li>
+<li>Relative water potential
+<ul>
+<li>determining direction of flow</li>
+<li>more and more -ve as water moves up from soil to leaves</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="transpiration">Transpiration</h4>
+<ul>
+<li>release of water vapour into the air from aerial organs</li>
+<li>functions:
+<ul>
+<li>cools leaves heated by sunlight</li>
+<li>pulls water and water-soluble minerlas up from teh roots</li>
+</ul>
+</li>
+<li>tree: 700-3500 liters of water/day, corn: 2L/day</li>
+<li><strong>Stomata</strong>:
+<ul>
+<li>90% transpiration occurs through</li>
+<li>occurs at highest density on the underside of leaves</li>
+<li>&gt; 1% of the leaf surface area</li>
+<li>can be found on all aerial (above ground) organs</li>
+<li>controlled through turgor pressure of guard cells
+<ul>
+<li>Open: turgid guard cells, K+ enter and water follows</li>
+<li>Close: Flaccid guard cells: K+ exit and water follows</li>
+</ul>
+</li>
+<li>Signal varies: water status, CO2 levels, light intensity, humidity, temperature and hormones</li>
+</ul>
+</li>
+<li><strong>Lenticels</strong>
+<ul>
+<li>pores, cannot open/close</li>
+<li>aren't as high up in water column (stems/trunks) as leaves, only account for 0.1% of overall transpiration in a plant</li>
+<li>In fruits (apple, mango, pear and avocado), lenticels form from stomata =&gt; can account for 20$ of overall transpiration in plant</li>
+<li>allows very little water loss (5%)</li>
+<li>reduce water loss (in arid env) by:
+<ul>
+<li>Thicker cuticles</li>
+<li>Mesophyll packed closer together, no air soaces</li>
+<li>sunken stomates to reduce evaporation</li>
+<li>increased layers of epidermis</li>
+<li>only open stomata at night</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="vascular">Vascular</h3>
+<ul>
+<li>Xylem: transports water and nutrients from the roots to stems and leaves. Complex tissue that can be made of the following:
+<ul>
+<li><strong>Parenchyma</strong> (ALIVE at maturity)</li>
+<li><strong>Sclerenchyma</strong> (DEAD)</li>
+<li><strong>Vessel members</strong> (angiosperm): DEAD, short and have perforation plates and pits</li>
+<li><strong>Tracheids</strong> (ferns, gymnosperms and angiosperm): DEAD, have pits but not perforation plates</li>
+</ul>
+</li>
+<li>Phloem: Distributes products of photosynthesis to rest of plant
+<ul>
+<li><strong>Parenchyma</strong></li>
+<li><strong>Sieve Tube Members and Companion Cells</strong>: Tube are ALIVE but lack nucleus and are assoiciated with companion cells to form <strong>Sieve Tube Element</strong>. Sieve tube memebrs have <strong>sieve plates</strong> on either end.</li>
+</ul>
+</li>
+<li>Cambium
+<ul>
+<li>Layer of dividing cells between xylem and phloem responsible for the secondary growth of stems and roots.</li>
+</ul>
+</li>
+</ul>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>
