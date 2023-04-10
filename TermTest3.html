@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PhotoSynthesis</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+/* From extension dendron.dendron */
+@font-face {
+  font-family: "fontello";
+  src: url("../font/fontello.eot?7840610");
+  src: url("../font/fontello.eot?7840610#iefix") format("embedded-opentype"),
+    url("../font/fontello.woff2?7840610") format("woff2"),
+    url("../font/fontello.woff?7840610") format("woff"),
+    url("../font/fontello.ttf?7840610") format("truetype"),
+    url("../font/fontello.svg?7840610#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?7840610#fontello') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-link:before {
+  content: "\e800";
+} /* '' */
+
+.memo-markdown-embed {
+  /* border: 1px solid #ddd; */
+  /* border-radius: 6px; */
+  /* padding: 5px 20px 15px 20px;
+  margin: 0 20px; */
+  border-bottom: dashed thin;
+  position: relative;
+}
+
+.memo-markdown-embed-title {
+  height: 36px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 26px;
+  line-height: 42px;
+  top: 5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 900;
+}
+
+.memo-markdown-embed-link {
+  border-bottom: dashed thin;
+  /* position: absolute;
+  top: 6px;
+  right: 12px; */
+  /* /cursor: pointer; */
+  /* //float: right; */
+}
+
+.memo-markdown-embed-link i {
+  font-size: 18px;
+  color: #535353;
+}
+
+.memo-markdown-embed-link:hover i {
+  color: #000000;
+}
+
+.vscode-dark .memo-markdown-embed-link:hover i {
+  color: #ffffff;
+}
+
+.memo-markdown-embed-content {
+  /* max-height: 500px; */
+  /* overflow-y: auto;
+  padding-right: 10px; */
+}
+
+.memo-invalid-link {
+  color: #cc0013 !important;
+  cursor: not-allowed;
+}
+
+.memo-cyclic-link-warning {
+  text-align: center;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h2 id="photosynthesis">PhotoSynthesis</h2>
+<h3 id="photosynthesis-and-pigments">Photosynthesis and Pigments</h3>
+<ul>
+<li>involved in every food chain
+<ul>
+<li>most of carbon were involved.</li>
+<li>Oxygen is a by-product</li>
+</ul>
+</li>
+<li>solar energy to biochemical energy: 6 CO2 + 12H2O to C6H12O6 + 6O2 + 6H2O</li>
+<li>Respiration
+<ul>
+<li>in mitochondria (stoed energy to ATP with O2)</li>
+<li>All organism must extract energy from food through respiration</li>
+<li>Photosynthesis and respiration are <strong>independent</strong> processes</li>
+<li>ATP(<strong>Adenosien triphosphate</strong>) energy currency, required by every living cells.</li>
+<li>Ultimately, all organisms are solar-powered</li>
+</ul>
+</li>
+<li>Active Light
+<ul>
+<li>40% energy recived on earth: visible light</li>
+<li>leaves absorb 80% of visible light reaching them</li>
+<li>light is absorbed by <strong>pigments</strong>, different pigments - different wavelengths</li>
+<li>pigment color determined by <strong>reflected light</strong>, or light NOT absorbed</li>
+<li><strong>chlorophyll</strong>: blue(430) and red(680), reflect green
+<ul>
+<li>a: reflects blue-green</li>
+<li>b: reflects yellow-green</li>
+</ul>
+</li>
+<li><strong>carotenoids</strong>: absorb blue-green, reflect yellow or yellow-orange</li>
+</ul>
+</li>
+<li>Accessory pigments (<strong>vascular plants</strong>)
+<ul>
+<li><strong>carotenoids</strong>: in plastid, beta-carotene(orange), xanthophyll(yellow)</li>
+<li><strong>anthocyanin</strong>: vacuole, blue, purple or red depending on pH</li>
+<li>autumn: <strong>deciduous trees</strong>, carotenoid and anthocaynin visible after chlorophyll break down.</li>
+</ul>
+</li>
+</ul>
+<h3 id="light-dependent-reaction-in-thylakoid-membranes">Light-Dependent Reaction in Thylakoid Membranes</h3>
+<ul>
+<li>In thylakoid, water molecules split, ATP and NADPH produced.</li>
+<li>Mg and N rings absorb light photons, lipid tail anchors into thylakoid membrane
+<ul>
+<li><strong>CH3 in a, CHO in b</strong></li>
+</ul>
+</li>
+<li><strong>photosystems</strong>: discrete clustered pigments units in thylakoid membranes, 200-300 pigments and associated proteins in each.
+<ul>
+<li><strong>Reaction Center</strong>
+<ul>
+<li>chlo <strong>a</strong> molecule and primary electron acceptor</li>
+<li>less than 1% of pigments in a photosystem are chlo <strong>a</strong></li>
+</ul>
+</li>
+<li><strong>Antenna pigment molecules</strong>
+<ul>
+<li>chlo and acc pigm gather and transfer light energy to reaction center</li>
+<li>acc pigm paly critical role dissipating and funnelling light energy to chlo <strong>a</strong> (吸收光，传递到reaction center)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Electron Energy</strong>: excited (by photon) electron release energy (heat, fluorescence or photochemistry)</li>
+<li><strong>Reaction Center</strong>
+<ul>
+<li>light -&gt; reaction-center chlo <strong>a</strong> eject an electron -&gt; transferred to <strong>primary electron receptor</strong></li>
+<li>reaction center chlo <strong>a</strong>: <strong>absorb light at slightly longer wavelengths</strong> (lower energy)</li>
+</ul>
+</li>
+<li>two kinds of photosystems <strong>PSI, PSII</strong>
+<ul>
+<li><strong>PSII</strong>
+<ul>
+<li>antenna pigments: chlo <strong>a, b</strong>, beta-carotene</li>
+<li>rc: chlo <strong>a</strong>: <strong>P680</strong> and PEA (pheophytin)</li>
+</ul>
+</li>
+<li><strong>PSI</strong>
+<ul>
+<li>ap: chlo <strong>a</strong> &gt; chlo <strong>b</strong>, carotenoids</li>
+<li>rc: <strong>a</strong>: <strong>P680</strong> and PEA (iron-sulphur proteins)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Z-scheme</strong>
+<ul>
+<li>zigzag pattern to link PSI and PSII, movement of electrons, light-dependent.</li>
+</ul>
+<ol>
+<li>light funnelled to <strong>P680</strong>, <strong>chlorophyll a</strong> pass electron to <strong>primary electorn acceptor</strong> (pheophytin), then to <strong>plastoquinone</strong> in electron transport chain to PSI</li>
+<li>补充电子：(<strong>photolysis</strong>), one water with 2 photons -&gt; <strong>2 electrons + 2 hydrogen atoms + oxygen atom</strong></li>
+<li>electron lose energy as they move through protein complexes in <strong>electron transport chain</strong>: plastoquinone, cytochrome complexes and plastocyanin</li>
+<li>energy to move protons across thylakoid membrane (<strong>chemiosmosis</strong>), then H+ gradient indirectly power the synthesis of ATP (<strong>photophosphorylation</strong>)</li>
+<li>Light funnelled to <strong>P700</strong>， electron in <strong>chlorophyll a</strong> gets excited and passed to <strong>iron-sulphur electron acceptor</strong>, e- replaced by electrons from PSII</li>
+<li>e-: ferredoxin to NADP+ reductase, NADP+ <strong>reduced to NADPH</strong></li>
+</ol>
+<ul>
+<li><strong>noncyclic electron flow</strong>, PSII, PSI <strong>simultaneously</strong></li>
+<li>efficiency: light energy -&gt; chemical energy: 27%, solar panel: 10-20%</li>
+</ul>
+</li>
+<li><strong>Cyclic Electron Flow</strong>
+<ul>
+<li>called primitive photosystems but not that primitive</li>
+<li><strong>P700</strong> electrons recycled via <strong>ferredoxin</strong> to <strong>plastoquinone</strong>, then follow flow (H+), making <strong>more ATP</strong>, no water split thus <strong>no oxygen or NADPH</strong> produced.</li>
+</ul>
+</li>
+</ul>
+<h3 id="light-independent-reaction-in-chloroplast-stroma">Light-Independent Reaction in Chloroplast Stroma</h3>
+<ul>
+<li>light-dependent: light energy + H2O =&gt; chemical energy (<strong>ATP</strong>, <strong>NADPH</strong>)</li>
+<li>The <strong>light-independent reaction or Calvin Cycle</strong>: in stroma, using chemical energy to make simple sugar phosphates, often called <strong>dark reaction</strong>
+<ul>
+<li>not so dark because ATP and NADPH only last a few seconds.</li>
+</ul>
+</li>
+<li><strong>The Calvin Cycle</strong>
+<ul>
+<li>Calvin-Benson-Bassham, pathway CO2 -&gt; sugars</li>
+<li>first product: 3-carbon sugar compound [3-phosphoglycetric acid (3PGA)], C3 pathway</li>
+</ul>
+<ol>
+<li>one <strong>ATP</strong>: add a phosphate to a <strong>5-carbon</strong> (Ru5P) to form <strong>RuBP</strong></li>
+<li><strong>CO2</strong> added above, catalyzed by <strong>RUBISCO</strong> to form <strong>6-carbon</strong> molecule, unstable and breaks down into two <strong>3-carbon</strong> molecules quickly (<strong>PGA</strong>)</li>
+<li><strong>Two</strong> ATP add phosphates to PGA to form BPG</li>
+<li>BPG reduced <strong>by NADPH</strong> into G3P</li>
+<li>one G3P per three turns =&gt; sugars. <strong>Majaroty of G3P</strong> continues to replenish RuBP</li>
+<li><strong>ATP</strong> from light-dependent reaction is used to <strong>phosphorylate Ru5P</strong> to RuBP</li>
+</ol>
+</li>
+<li><strong>Three turns</strong> of cycle =&gt; <strong>one G3P molecule</strong>
+<ul>
+<li><strong>six turns</strong> =&gt; one 6-carbon sugar: <strong>18 ATP, 12 NADPH</strong></li>
+<li>6CO2 + 6RuBP -&gt; 12 G3P (12:12), then 10G3P -&gt; RuBP (6ATP), 2G3P-&gt;glucose</li>
+</ul>
+</li>
+<li><strong>Cclic electron flow</strong> in PSI provides extra ATP requirement (<strong>3:2</strong>)</li>
+<li>6-carbon sugar: remain in chloroplast as <strong>starch</strong> or transported to (mitochondria) or (roots) as <strong>sucrose</strong></li>
+</ul>
+<h3 id="c3-pathway-and-sugar-transport">C3 Pathway and Sugar Transport</h3>
+<ul>
+<li>~95% of plant biomass utilize C3 fixation.
+<ul>
+<li>all woody trees, temperate crop species</li>
+<li>3-PGA first product of fixation by RubisCO</li>
+</ul>
+</li>
+<li>Sugar transport
+<ul>
+<li><strong>C3 Leaf</strong>
+<ul>
+<li>both light-de and -inde reactions occur in mesophyll cells.</li>
+<li>No Chloroplasts in bundle sheath cells. parenchyma used for conduction.</li>
+</ul>
+</li>
+<li><strong>Phloem</strong>
+<ul>
+<li>Movement of sugar and other organic molecules can be either symplastic (and transmembrane) or apoplastic: mesophyll cells -&gt; bundle-sheath cell -&gt; companion cell (transfer) -&gt; sieve-tube member</li>
+<li>Porous <strong>sieve plates</strong> between sive tubes allow continuous cytosolic flow (no need to cross cell wall or membrane). sieven tubes lack nuclei, rely on <strong>companion cells</strong> for protein synthesis, still <strong>alive</strong> at maturity (symplast present)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Proton Pumps</strong>
+<ul>
+<li>Energy is required to move surcrose molecules from <em>apoplasm</em> to the <em>symplasm</em> of sieve and companion cells. H+ graidient (by proton pump) is used to <strong>co-transport</strong> one sucrose molecule with every H+ ion.</li>
+</ul>
+</li>
+<li><strong>Source to Sink</strong>
+<ul>
+<li>Sugar <strong>source</strong>: part of the plant that produces sugars (leaves, green stems)</li>
+<li>Sugar <strong>sink</strong>: part of the plant that mainly consumes or stores sugar (roots, stems, and fruits)
+<ul>
+<li>Sink in summer can become source in winter. So sugar is not always transported by phloem. Shoots are sink in the spring! (maple xyrup)</li>
+</ul>
+</li>
+<li>sugar transport is driven by water uptake through osmosis</li>
+</ul>
+</li>
+<li><strong>Pressure-flow Hypothesis</strong>
+<ul>
+<li>The machanism for phloem trasport (1927)</li>
+<li>source -&gt; sieve tubes by <strong>active transport</strong> (through companion cell, also pump protein). Water potential of sieve tube decreases and water enters by osmosis. Turgor pressure moves water and sugar down the sieve tubes towards sinks. Mass flow from high to low pressure. Then sugar is <strong>actively unloaded</strong> at sink and water exits, lowering water pressure in sieve tubes. Water diffuses back into xylem. Active transport (symplastic) required, hence sieve tubes and companion cells being &quot;alive&quot;</li>
+</ul>
+</li>
+</ul>
+<h3 id="photorespiration">Photorespiration</h3>
+<ul>
+<li>estimated efficiency <strong>27%</strong>, overall ~4-6% ==&gt; Ribulose 1,5 bisphosphate carboxylase/<strong>oxygenase</strong></li>
+<li>RubisCO: keyenzyme to fix carbon,<strong>most abundant proten on earth</strong>, bot a carboxylase and an oxygenase</li>
+<li><strong>Photosynthesis</strong>: RubisCo functions as a carboxylase, adds a carbon from CO2</li>
+<li><strong>Photorespiration</strong>: RubisCO functions as an oxygenase, adds oxygen from O2, produce 2-PG, broken down by mitochondria to release CO2, <strong>No ATP is produced</strong>.</li>
+<li>RubisCO's affinity for CO2 is not strong. O2 produced during photosynthesis can block carbon fixation.</li>
+<li>temparture increase, water loss, stomata close (turgor pressure low), CO2 locked out and O2 trapped, photorespiration rates increase</li>
+<li>High light, high temp, low water, low CO2 high O2 increases photorespiration (sunny warm summer day, O2 reduce 33% in C3)</li>
+<li>Moderate light, moderate temperature, sufficient water, high CO2 low O2 increases photosynthesis</li>
+</ul>
+<h3 id="c4-abd-can-pathways">C4 abd CAN pathways</h3>
+<ul>
+<li><strong>C4 fixation</strong>: warm and arid, mostly grasses with some cold-tolerant shrubs and tropical angio sperms (~3% of flowering plants)</li>
+<li><strong>Kranz anatomy</strong>: distinctive leaf anatomy. spatial separation of C4 pathways (mesophyll) and Calvin cycle (bundle sheath)</li>
+<li><strong>Spatial Separation</strong>
+<ul>
+<li>First detectable product: <strong>oxaloacetate</strong> (OAA), formed when CO2 is fixed to phosphoenilpyruvate(PEP) by <strong>PEP carboxylase</strong> (PEPC) in the chloroplast stroma of <strong>mesophyll cells</strong></li>
+<li>OAA is converted to <strong>malate (or aspartate)</strong> and moved into the <strong>bundle sheath cells</strong> through the symplast (plasmodesmata)</li>
+<li>once inside the bsc, the malate is decarboxylated to yield <strong>CO2 and pyruvate</strong> in the chloroplast stroma</li>
+<li>The released CO2 then enters the <strong>Calvin cycle</strong> (C3 fixation)</li>
+<li>The pyruvate recycles back to the mesophyll cell chloroplasts where it is phosphorylated to <strong>regenerate PEP</strong></li>
+<li>C4 and Cc <strong>simultaneously</strong></li>
+</ul>
+</li>
+<li><strong>Advantages</strong>
+<ul>
+<li>high concentration of CO2 in BSC, favouring binding of <strong>RubisCO to CO2 rather than O2</strong></li>
+<li><strong>PEP carboxylase</strong> has a high affinity for the hydated form of CO2 and is not affected by the presence of concentration of O2</li>
+<li>CO2 released by photorespiration can also be re-fixed by the C4 pathway.</li>
+<li>C4 predominate in hotter, drier climates: optimal temp is much higher, can attain the same photosynthetic rate as C4 but with smaller stomatal openings (less water loss). 3-6X less RubusCO than C3. use nitrogen and water more efficiently.</li>
+</ul>
+</li>
+<li><strong>Single-Cell C4 System</strong>
+<ul>
+<li>Kranz Anatomy is <strong>NOT required</strong>, Chenopodiaceae plant achieve spatial separation in a single cell typle. Peripheral chloroplast compartments (<strong>PCC</strong>, C4), and central chloroplast compartments (<strong>CCC</strong>, Calvin cycle, C3 fixation)</li>
+</ul>
+</li>
+<li><strong>Temporal Separation</strong> named <strong>carssulacean acid metabolism (CAM)</strong>
+<ul>
+<li><strong>water loss</strong> can threaten carbon fixation. Some plants take up <strong>CO2 and perform the C4 pathway at night</strong> and then carry out the Calvin cycle during the day <strong>temporal separation</strong></li>
+<li>more widespread than spatial C4 (~5%), evolved independently in many <strong>succulents</strong> (cacti, pineapple and stonecrops), but also non-succulents: some orchids, ferns and <em>Welwitschia</em> (Gymnosperm)</li>
+<li>defining feature of CAM plants: fix CO2 in the dark through the activity of PEP carboxylase in the cytosol.</li>
+<li>malic acid accumulate in the <strong>vacuole</strong>, which is used to supply CO2 during the day</li>
+<li><strong>Night-time</strong>: <strong>stomata open</strong>, <strong>starch</strong> from the chloroplast is broken down as far as <strong>PEP</strong>, then HCO3-(bicarbonate ion) reacts with PEP to form <strong>oxaloacetate</strong> and redunced to <strong>malate</strong> which is stored as <strong>malic cid in the vacuole</strong></li>
+<li><strong>daylight</strong>: <strong>stomata closed</strong>, <strong>malic acid</strong> recovered and <strong>decarboxylated</strong> producing CO2 and pyruvate, CO2 enters the Calvin cycle where it is re-fixed by <strong>RubisCO</strong>. stomata colosure prevents loss of water and CO2 released by the decarboxylation of malate.</li>
+</ul>
+</li>
+<li>Carbon fixation: Evolutionary Innovations
+<ul>
+<li>improving light harvest by adding another photosystem and varying pigments.</li>
+<li>Improving energy generation by mainting potential for cycclic electron flow</li>
+<li>Improving CO2 fixation (<strong>Spatially separating, C4</strong>, <strong>Temporally separating, CAM</strong>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="growth-regulators">Growth Regulators</h2>
+<h3 id="introduction-to-plant-growth-regulators">Introduction to Plant Growth Regulators</h3>
+<ul>
+<li>modify plant <strong>development and growth</strong>, <strong>hormones</strong> (endogenous) and <strong>synthetic substances</strong> (exogenous)</li>
+<li><strong>Signal-Transduction Pathways</strong>: binding to a specific <strong>receptor</strong>, thereby initialting a series of biochemical events (<strong>response</strong>). <strong>Positive response</strong>: turn something on, <strong>Negative</strong>: turn something off.</li>
+<li><strong>Hormones</strong>: <strong>Synthesis</strong> in one part of body, <strong>Transport</strong> to another part of the body, <strong>Induction</strong> of a chemical response to control a physiological event</li>
+<li>both <strong>promote</strong> and <strong>inhibit</strong> responses, effects depends on <strong>concentration, location and timing</strong>, key components of plant's <strong>communication system</strong> (cell-cell or long distance). Some hormones act in the same tissue where they are produced</li>
+</ul>
+<h3 id="auxin-and-cell-elongation">Auxin and Cell Elongation</h3>
+<ul>
+<li>first plant hormone discoverd by Charles Darwin while studying <strong>phototropism</strong> (seedling responses to light). Greek <strong>to increase</strong></li>
+<li>structural formula: <strong>indoleacetic acid (IAA)</strong>, modified amino acid, most common natrual xusins. <strong>essential</strong> to plant development and function</li>
+<li><strong>acid growth hypothesis</strong>: <strong>decrease in cell wall pH</strong>, activates <strong>expansin</strong> exzymes, weakens cell wall. increase space between cellulose fibers. Cell wall expansin <strong>irreversible</strong></li>
+<li>Etiolation: angiosperns with little/no light. Elongation of stem and leaves via <strong>increased auxin</strong> levels, longer internodes (fewer leaves), chlorosis (lack of chlorophyll)</li>
+<li>Promotes: <strong>Root-shoot axis</strong> during embryogenesis, lateral root <strong>formation</strong>, <strong>Differentiation</strong> of procambium and <strong>de-differentiation</strong> of vascular tissue, fruit <strong>development</strong></li>
+<li>Inhibits: axillary buds and secondary <strong>branching</strong>, lateral root <strong>length</strong>, <strong>Abscission</strong> in young leaves and immature fruit</li>
+<li>Synthesis and Transport:
+<ul>
+<li><strong>All plant tissues</strong> can synthesize IAA, higher production in meristems, buds, young leaves and actively growing parts. <strong>Highest level of auxin</strong>: shoot tip, maxima in leaf primordia. Auxin <strong>Synthesized in leaves</strong> can be transported in the sap of phloem sieve tubes (<strong>non-polar</strong> mass flow) to rest of plant</li>
+<li>(active) Polar transport: (addition to phloem transport). by IAA <strong>influx and efflus</strong> transporters, through parenchyma cells surrounding vascular bundles. <strong>unidirectional</strong></li>
+<li>IAA concentration gradient (highest level in shoot tip), shoor-root orientation determined by <strong>polar auxin transport</strong></li>
+<li><strong>In roots</strong>:
+<ul>
+<li>auxin from shoots moves through sieve tubes (<strong>bulk flow</strong>) to root tip <strong>acropetal</strong>. At root tip, <strong>polar transport</strong> redirect auxin to the epidermis and cortex (表面), and back upwards to the root-shoot junction (<strong>basipetal</strong>), IAA also synthesized in RAM.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Apical Dominance</strong>: suppression of axillary bud growth cloese to shoot tips, <strong>pruning</strong> (removal of the shoot tip) release axillary buds.</li>
+<li>Lateral root: accumulation of auxin in <strong>pericycle</strong> stimulates cell expansion and lateral root formation. Too much auxin will inhibit root length</li>
+<li>Vascular Tissues:
+<ul>
+<li><strong>auxin synthesis</strong> promotes differentiation in <strong>procambium</strong> (formation of primary xylem and phloem) in shoto and root meristems.</li>
+<li><strong>auxin transport</strong> and synthesis from surrounding cells intiates de-differentation of vascular tissue if formation of <strong>vascular</strong> and <strong>cork cambium</strong> in secondary growth</li>
+</ul>
+</li>
+<li>Fruit development:
+<ul>
+<li>promotes. expansion by inhibiting fruit ripening and abscission.</li>
+<li><strong>Developing seeds</strong> are a source of auxin to promote maturation of the ovary wall</li>
+<li><strong>Parthenogenic</strong> fruit formation can be stimulated by exogenous application of auxins.</li>
+</ul>
+</li>
+<li><strong>Synthetic Auxin</strong>: <strong>2,4-D</strong>, <strong>NAA</strong>, not degraed, reatin <strong>artifically high levels</strong>, can be <strong>lethal</strong> (toxic), killing <strong>broad-leaf plants</strong>, <strong>ehtylene production</strong>, <strong>weed killer</strong></li>
+</ul>
+<h3 id="cytokinin-and-cell-division">Cytokinin and Cell Division</h3>
+<ul>
+<li><strong>kinetin</strong>, <strong>zeatin</strong> (most active endogenous cytokinin)</li>
+<li>Synthesis and transport: synthsized in <strong>actively dividing tisuses</strong>, high level in RAM, trasnported up to rest of plant through <strong>xylem</strong></li>
+<li>Function:
+<ul>
+<li><strong>Delay or reverse tissue senescene</strong> by directing amonoacids to locations of higher concentrations</li>
+<li><strong>Promote cell division</strong> in meristems and developing fruits (early stage of fruits)</li>
+<li>promotes secondary branching, latering apical dominance</li>
+</ul>
+</li>
+<li>Synergistic and Antagonistic Relationships.
+<ul>
+<li>concentration <strong>relative</strong> to other hormones. <strong>Synergistic</strong> (cooperative) or <strong>antagonistic</strong> (opposing). Cytokinin alone has no effect!</li>
+<li>in shoots: <strong>sytokinin</strong> synthesis at centraol zone of SAM, high cytokinin low auxin promote cell division. Daughter cells in primordia and procambium: high auxin low cytokinin to promote cell expansion and differentiation.</li>
+<li>in young leaves: high cytokinin near petiole(base), cell division, high auxin levels at center, cell expansion. Both low at edge, mature cells.</li>
+<li>apical dominance: axillary buds also produce auxin and cytokinin. But auxin gradient near shoot tip will inhibit branching. older axillary buds further away from SAM will become active once cytokinin exceed auxin. <strong>Auxin cytokinin ratios</strong> vary by species, typically conifers have strong apical dominance</li>
+<li>in root: high axusin promotes root (basipetal， 表面？) hair formation, synthesizde cytokinin transported away in xylem. high auxin promotes elongation and eventual differentiation. High cytokinin in center of RAM (tip) promotes active division of initials.</li>
+</ul>
+</li>
+</ul>
+<h3 id="auxin-cytokinin-and-plant-tissue-culture">Auxin, Cytokinin and Plant Tissue Culture</h3>
+<ul>
+<li><strong>Totipotency</strong> of platn cells. <strong>Tissue culture (<em>in vitro</em> propagation)</strong></li>
+<li>advantages: genetic copies, spped up maturatoin, can generate when seed not available</li>
+<li>Auxin : Cytokinin Ratios
+<ul>
+<li>cytokinin alone has little effect, auxin alone promotes cell elongation</li>
+<li>low cytokinin to high auxin: rise to <strong>roots</strong></li>
+<li>equal: rise to undifferentiated dividing cells (<strong>callus</strong>)</li>
+<li>High cytokinin to liw auxin: cause cells to divide and differentiate into axillary (shoot) buds</li>
+<li><strong>The effect of growth regulators</strong>: depends on type of tissue and species</li>
+<li>From high auxin to high cytokini: <strong>Rooting on shoots</strong> (primary root initiation), <strong>Rooting on callus</strong> (primary root initiation), <strong>Callus formation</strong> (undifferentiated cell division), <strong>Adventitious buds</strong> (lateral root initiation), <strong>Axillary buds</strong> (lateral branch initiation)</li>
+</ul>
+</li>
+</ul>
+<h3 id="other-hormones">Other hormones</h3>
+<h4 id="gibberellins">Gibberellins</h4>
+<ul>
+<li>not fully understood, xylem and phloem transport, nonpolar</li>
+<li>Function:
+<ul>
+<li>Promote shoot elongation. Induce floral transition and fruit development. Promote embryo deveopment. Stimulate seed germination.</li>
+<li>Accelerate plant growth: signal transition between meristem to shoot, young to mature leaves... <strong>Exogenous application</strong> can accelrate plant development in dicots and some monocots, no effect in conifers.</li>
+</ul>
+</li>
+<li>Stem Elongation: dependent on auxin. Enhance <strong>expansin</strong> synthesis, bearking hemicellulose (<strong>xyloglucan</strong>) through simulation of XET</li>
+<li>Seed dormancy: exogenous GAs can substitute for either <strong>vernalization</strong> or light-induction for germination</li>
+<li>Applications: expensive. increase grape size and promote elongation of stem internodes.</li>
+</ul>
+<h4 id="abscisic-acid">Abscisic Acid</h4>
+<ul>
+<li><strong>ABA</strong>, plays <strong>No</strong> direct role in abscission, but stimulates sthlene production.</li>
+<li>Synthesized throughout plant, in cells that contain <strong>plastids</strong> from carotenoid pigments. Transported by <strong>phloem and xylem</strong>, nonpolar. root-to-shoot signalling</li>
+<li><strong>water stress</strong>, root increase <strong>ABA biosynthesis</strong>, transported to shoot in xylem, <strong>activates pumps</strong> that remove protons from guard cells to close stomata.</li>
+<li>Seed development: Stimulates the production of seed <strong>storage proteins</strong>, promots <strong>seed dormancy</strong>, <strong>inhibits</strong> seed germination. (e.g: <strong>viviparous</strong> maize mutants germinate on mother (fail to become dormant))</li>
+<li>Antagonistic with Gibberellins: seed germination, floral transition, fruit development (GA promots, ABA inhibits)</li>
+</ul>
+<h4 id="ethylene">Ethylene</h4>
+<ul>
+<li><strong>methionine</strong> (amino acid) =&gt; ACC =&gt; ethylene, CO2 and ammonium ion by enzymes of the <strong>tonoplast</strong></li>
+<li>Biosynthesis: <strong>all plant tissues</strong>, increased during leaf abscission, flower senescence and fruit ripening</li>
+<li>in response to <strong>abiotic, biotic, mechanical</strong> stress.</li>
+<li>Abscission: promotes. digest cell walls in <strong>abscission zone</strong>, interaction between <strong>auxin</strong> and <strong>ethylene</strong> (auxin decrease sensitivity of abscission zone cells to ethylene)</li>
+<li>Cell Expansion: induces <strong>lateral cell expansion</strong> (wider), shift microtubles</li>
+<li>Triple Response: Not the same as etiolation: slowing of stem or root elongation, thickening of the stem or root, curving to grow horizontally.</li>
+<li>Touch: induces ethylene production, inhibits cell elongation, inducing lateral cell expansion. <strong>thigmomorphogenesis</strong></li>
+<li>Fruit ripening: degradation of chlorophyll, softening of tissue by enzymatic digestion of middle lamella, synthesis of sugars. <strong>climacteric fruits</strong>: peak in respiration (due to rapid increase in ethylene production), <strong>nonclimacteric fruits</strong>: CO2 production decreases as ripening occurs.</li>
+</ul>
+<h4 id="brassinosteroids">Brassinosteroids</h4>
+<ul>
+<li>like auxin. stimulate cell division, xylem differentiation, promote pollen tube growth, low concentrations promote root growth and development, promote elongation in shoots and enhance ethylene synthesis and senescece =&gt; bind to plasma membrance receptor proteins but do not enter the cell.</li>
+</ul>
+<h4 id="jasmonic-acid">Jasmonic Acid:</h4>
+<p>antagonistic with salicylic acid.</p>
+<ul>
+<li>Additional hormones: Polyamines, salicylic acid, strigalactones.</li>
+</ul>
+<h2 id="responses">Responses</h2>
+<h3 id="general">General</h3>
+<ul>
+<li>specifically blue (450-495) and red (650-790) ligth is differentiated via <strong>photoreceptors</strong>
+<ul>
+<li>Red: elongation and growth of tissues, germination, circadian rhythm</li>
+<li>Red &amp; Blue: Seasonal reponses and flowering, stomata and gas exchange</li>
+<li>Blue: polar cell growth (differential expansion), chloroplast movement</li>
+</ul>
+</li>
+<li><strong>Photoreceptors</strong>:
+<ul>
+<li><strong>phytochrome</strong> (PHY): red/far red</li>
+<li><strong>cryptochromes</strong> (CRY): UV-A/blue</li>
+<li><strong>phototropins</strong> (PHOT): Blue.</li>
+<li>Can be difficult: <strong>de-etolation</strong> involve all three photoreceptor families</li>
+</ul>
+</li>
+<li><strong>Photomorphogenesis</strong>: light mediated develpoment, where plant growth atterns respond to light.</li>
+</ul>
+<h3 id="red-light-and-biological-clocks">Red light and biological clocks</h3>
+<ul>
+<li><strong>phytochromes</strong>: five photoreceptors. on/off switch, P_FR = ON (once absorb FR, converted), P_R = OFF. P_FR can also break down and go back to P_R (low or no light)</li>
+<li><strong>photodormancy &amp; Seed germination</strong>: require light or dark conditions for germination can be overcome by: exposure to red (sun-loving) or far-red (shade-loving): most angiosperms require high PFR : low PR for germination; <strong>Gibberellins</strong> == cold treatments (vernalization), removing seed coat and endosperm (stratification)</li>
+<li>Circadian Rhythms: 24 hour cycle. Leaf and flowering opening and closing, volatile emissions, photosynthesis, auxin synthesis, gene expression</li>
+<li><strong>photoperiod</strong>, <strong>phytochromes measure day length</strong> by changing from PFR (inactive) to PR in the dark, control seasonal and circadian rhythms by turning <strong>genes off and on</strong>
+<ul>
+<li>flowering: <strong>short-day plants</strong>, <strong>long-day plants</strong>, <strong>day neutral</strong>. <strong>night-length</strong> determines. Flash of red-light (presence of PFR) disrupts length.</li>
+<li>PFR : PR ratio can only be used to measure day length. night length mechanism is not fully known</li>
+</ul>
+</li>
+<li>Flowering:
+<ul>
+<li>phytochromes in leaves, how to reach SAM to induce flowering: hormone <strong>florigen; FT</strong>, some species as <strong>gibberellin</strong>, transported through <strong>phloem</strong></li>
+<li>mobile flowering: even just cover one leaf, it will affect the entire plant flowering</li>
+<li>PHY and CRY activate genes. synthesize FT, transported to SAM, activate gene in floral development</li>
+</ul>
+</li>
+</ul>
+<h3 id="blue-light-and-phototropism">Blue light and phototropism</h3>
+<ul>
+<li><strong>tropism</strong>: growth response involving bending or curving of a plant:
+<ul>
+<li><strong>photo</strong>tropism: light; <strong>geo</strong>tropism: gravity; <strong>thigmo</strong>tropism: touch</li>
+</ul>
+</li>
+<li><strong>positive phototropism</strong>: towards light, shoots; <strong>negative phototropism</strong>: away from light, roots.</li>
+<li>light affects <strong>auxin</strong> distribution, accumulate on shaded side, no degradation.
+<ul>
+<li>high auxin: in <strong>shoots</strong>: promotes cell elongation, in <strong>root</strong>: inhibits cell expansion (elongation)</li>
+</ul>
+</li>
+<li>responsive to blue and less so, green light: <strong>PHOT1</strong> and <strong>PHOT2</strong>
+<ul>
+<li>lack of p1: imparied phototropism in dim blue light</li>
+<li>lack of p2: no effect but no avoidance chloroplast migration.
+<ul>
+<li><strong>Accumulation response</strong>: low blue light</li>
+<li><strong>Aboidnace response</strong>: high blue light</li>
+<li>myosin and actin filament</li>
+<li>stained with IKI: light-treated stained a lot.</li>
+</ul>
+</li>
+<li>p1p2 potentially regulate distribution of auxin in young leaves.</li>
+<li>stomata opening: first crack of dawn signal, p1p2 signal export of protons, drive K+ to enter.
+<ul>
+<li>open: K+ in, p1p2 absorb blue light independent of photosynthesis, phytb absorption of red lights in chloroplasts of mesophyll and guard cells to link between photosynthesis and decreased CO2 signal.</li>
+<li>Close: K+ out, no light, decreased turgor pressure (no water), <strong>ABA</strong> signal from roots</li>
+<li><strong>CAM</strong>: not controled by light, not known how.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="gravitropism"><strong>Gravitropism</strong></h4>
+<ul>
+<li><strong>positive</strong>: roots toward gravity; <strong>negative</strong>: shoots away from gravity</li>
+<li>sense:
+<ul>
+<li><strong>starch-statolith</strong> hypothesis: sedimenting amylopast as <strong>statoliths</strong> (gravity sensors): surround vascular tissues in <strong>shoot</strong>, in cells in root cap in <strong>root</strong></li>
+<li><strong>protoplast pressure</strong> hypothesis: the weight of the entire mass of the protoplast is involved</li>
+<li><strong>Tensegrity</strong> model: amyloplast sedimentation disrupt the actin filaments causing transient influx of calcium signal</li>
+</ul>
+</li>
+<li>Response:
+<ul>
+<li><strong>Auxin</strong> efflux carrier proteins (<strong>PIN3</strong>) are re-distributed in plasma membrane due to perception, polar auxin transport is concentrated on the lower side of root. <strong>calcium alkylation</strong>, H+/OH- pump activated explains inhibited growth on side with high auxin?</li>
+<li>once re-established +ve gravitropism, PIN3 and auxin are equally distributed in root tip (没说shoot)</li>
+</ul>
+</li>
+</ul>
+<h4 id="thigmotropism">Thigmotropism</h4>
+<ul>
+<li>turgor pressure:
+<ul>
+<li>Mimosa, <strong>pulvini</strong>: pumps ion out, lose water</li>
+<li>Venus fly trap: <strong>receptor cells</strong> depolarizes the membrane causing hinge mesophyll cells to take up water</li>
+</ul>
+</li>
+<li>hormoanl singalling (ethlyene &amp; auxin)
+<ul>
+<li><strong>tendrils</strong> use <strong>auxin</strong> to extend and reach objects and <strong>ethylene</strong> to wrap around objects.</li>
+<li>tendrils <strong>synthesize ethylene</strong> on the side that contacts the object: expansion inhibited, width increased</li>
+</ul>
+</li>
+</ul>
+<h3 id="photodamage">Photodamage</h3>
+<ul>
+<li>light-induced reduction in photosynthetic capacity and damage to photosynthetic machinery, all oxygen evolving phototrophs: ROS.</li>
+<li>PSII is most affected and <strong>blue/UV</strong> light cause the most damage.</li>
+<li>photoinhibition damage and repair is <strong>always</strong> occurring, becomes a problem when plant is exposed to <strong>extended</strong> environmental stress.</li>
+<li>Prevention strategies
+<ul>
+<li>Chloroplasts have ROS-eliminating systems, can repair nucleic acids, re-synthesize lipids and proteins, and quench excited chloroplasts to reduce effect of photoinhibitaion.</li>
+<li>Reduce amount of light reaching the chloroplast and PS reaction centers</li>
+<li>Accessory pigments: <strong>Carotenoids</strong> in plastids dissipitate light energy. <strong>Anthocyanin</strong>: vacuole, attract pollinators and protect from biotic and abiotic stress</li>
+<li>Phenols &amp; polyphenols:
+<ul>
+<li><strong>phenolic acids</strong> in all plant organs stored in vacuole, protect from <strong>UV light</strong> and predators, can accumulate in cuticle and epidermis</li>
+<li><strong>Flavonoids</strong>: stored in the vacuole and include <strong>anthoxanthin</strong> (UV) <strong>anthocyanin</strong> (visible, capture free radicals ROS, accumulation inducedby light, temp and jasmonic acid)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Water:
+<ul>
+<li><strong>Decrease in water</strong> decreases rate of photosynthesis as PSII and photolysis requires water, absorb more light energy than can be consumed: CAM photosynthesis, succulent leaves, thickened cuticles, chloroplast avoidance. <em>Kalanchoe</em>: cuticle, water storage (flavonoid and phenolic acid) and ball chloroplast</li>
+</ul>
+</li>
+</ul>
+<h2 id="plant-defense">Plant Defense</h2>
+<p><strong>secondary metabolites</strong>: primarily to protect against photodamage and climate changes</p>
+<h3 id="responses-to-pathogens">Responses to pathogens</h3>
+<ul>
+<li>infection induces:
+<ul>
+<li><strong>local/cellular elicit response</strong>: <strong>elicitors</strong> bind to receptors =&gt; <strong>hypersensitive response (HR)</strong>, limits spread by clocalized cell death and producing antimicrobial compounds. programmed death results in a <strong>lesion</strong> on the leaf</li>
+<li><strong>systemic responses</strong>: dying cells release salicylic acid and nitric oxide whihc initiate this. (systemic acquired resistance or SAR) leads to the production of compounds that attenuate pathogen growth and increase the levels of resistance of the whole organism.</li>
+<li>binding =&gt; signal transduction pathway =&gt; STP cause HR =&gt; salicylic acid =&gt; another STP to produce antimicrobial molecules.</li>
+</ul>
+</li>
+<li>Herbivores
+<ul>
+<li>Herbivore and ozone damages results in the production of <strong>ethylene</strong></li>
+<li>Ethylene perception reduces the production of pathogen defense compounds, inducing other defense genes and stimulatiing the production of <strong>jasmonic acid</strong> and <strong>volatile organics</strong> =&gt; signals to other plants</li>
+<li><strong>Volatiles</strong>:
+<ul>
+<li>more than 1700 compounds, &gt; 90 plant families. 1% of plant <strong>econdary metabolites</strong>,</li>
+<li>fatty acids &amp; amino acids derivatives. Typically lipophilic (fat loving) liquids with high vapro pressures. Synthesized in epidermis and corss membranes freely.</li>
+<li>receptors not identified. Ca2+-dependent membrane depolarization</li>
+<li><strong>tritrophic interactions</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="secondary-metabolites-and-volaties">Secondary metabolites and volaties</h3>
+<ul>
+<li><strong>Biotechnology</strong>: pharmaceutical ... use of <strong>secondary metabolits</strong></li>
+<li>pharmaceutical use:
+<ul>
+<li>Phenolics: <strong>antimicrobial, antiseptic</strong>, herbivore deterrents
+<ul>
+<li><strong>salicylic acid</strong>: aspirin, pathogenic systemic response</li>
+<li><strong>cannabinoids</strong>: tricomes of cannaboids, psychoactive effect in animals</li>
+<li><strong>Capsaicins</strong>: spicy!</li>
+<li><strong>Raspberry Ketones</strong>: source of smell</li>
+<li><strong>Methyl salicylate</strong>: essential oil wintergreen</li>
+</ul>
+</li>
+<li>Alkaloids: from <strong>amino acids</strong>, <strong>bitter taste</strong>
+<ul>
+<li><strong>Nocotine</strong>: psychoactive stimulant, insecticide</li>
+<li><strong>Caffeine</strong>: phychoactive stimulant</li>
+<li><strong>Morphine</strong>: pain medication, component of opium</li>
+<li><strong>Cocaine</strong>: central nervous system stimulatnt</li>
+<li><strong>Strychnine</strong>: toxic to animals</li>
+<li><strong>Quinine</strong>: treatment for malaria</li>
+</ul>
+</li>
+<li>Terpenoids: over 10000 known
+<ul>
+<li><strong>Menthol</strong>: essential oil commonly isolated from peppermint leaves</li>
+<li><strong>Artemisinin</strong>: highly effiective anti-malaria drug</li>
+<li><strong>Taxol</strong>: anti-cancer drug</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Herbivore Defense and Volaties
+<ul>
+<li>Tissue damage synthesizes <strong>ethylene</strong> which initiates volatile <strong>jasmonic acid</strong> signalling pathways and <strong>green leaf volatile</strong> emission. signal intact leaves on the same plant or neighbouring plants to launch <strong>Defense response</strong> which includes inducing the expression of genes and the emission of volatiles.</li>
+<li>GLV: quickly produced, <strong>antimicrobial</strong>, detect volatiles by bacteria and fungus. Promote salicylic acid. cross-talk between hormones and GLV determine pathogen or herbivore response</li>
+<li>Volatiels act as <strong>pheromones</strong> to attract pollinators: no two floral scents are the same (mix of 100). allow pollinators to discriminate between flowers among or within a species. <strong>promitive land plants</strong>: volatiles are expressed constitutively. <strong>Angiosperms</strong>: rate of scent emission can vary as a function of time of day, flower age, temp...</li>
+</ul>
+</li>
+</ul>
+<h2 id="biotechnology-and-genetic-engineering">Biotechnology and genetic engineering</h2>
+<h3 id="genetic-engineering">Genetic Engineering</h3>
+<ul>
+<li>
+<p>The transfer of genetic information from on eorganism to another: <strong>Traditional breeding</strong>, <strong>recombinant DNA technology</strong></p>
+</li>
+<li>
+<p><strong>Traditional Breeding</strong></p>
+<ul>
+<li>bring genomes together through <strong>cross fertilization</strong>: self/cross-pollinating plants, but self-pollinating plants is time consuming: remove male</li>
+<li><strong>hybrids</strong>: offspring of cross fertilization.</li>
+<li><strong>Outcrossing</strong> (between genetically different plants) =&gt; <strong>hybrid vigor(heterosis)</strong>: more productive. <strong>Heirloom varieties</strong>: mixture of genotypes but more potential in surviving environmental adversity</li>
+<li>Green Revolution: (Father of GR) Norman Borlaug <strong>wheat yield 4-fold</strong>, (Father of hybrid rice) Yuan Longping <strong>male sterile rice plants</strong>. IRRI =&gt; <strong>10-fold</strong> rice</li>
+</ul>
+</li>
+<li>
+<p><strong>Recombinant DNA</strong></p>
+<ul>
+<li><strong>vector</strong>: agent that can transmit a gene from one organism to another. <strong>1973</strong>, begninning of reombinant DNA technology (biologically functional plasmid in vitro)</li>
+<li><strong>Chemical Treatment</strong> to facilitate DNA uptake
+<ul>
+<li>cell walls can be digested to release <strong>protoplasts</strong>, PEG disrupts protoplast plasma membrane, allows for uptake of plasmids</li>
+<li><strong>Pros</strong>: fast. can use naked DNA, just recombinant plasmid. can perform in a wide variety of plant species</li>
+<li><strong>Cons</strong>: transient gene expression (does not integrate), not for establishing stable, transgenic lines</li>
+</ul>
+</li>
+<li><strong>Physical</strong> projectiles and injections
+<ul>
+<li><strong>micro-injected</strong> into protoplasts. Microcarriers (gold or tungsten) coated with recombinant plasmids, shot by <strong>gene gun</strong></li>
+<li><strong>pros</strong>: fast, can use naked DNA (plasmid)</li>
+<li><strong>cons</strong>: not feasible in all plant species or tissue (onion epidermis most commonly), transient gene expression....</li>
+</ul>
+</li>
+<li><strong>Biological</strong> plant pathogens can be re-purposed
+<ul>
+<li>disarmed <strong>viruses</strong></li>
+<li><strong>Agrobacterium</strong> <em>tumefaciens</em>
+<ul>
+<li>soil bacterium and plant pathogen: crown gall disease, infect a plant with <strong>tumour inducing (Ti) plasmid</strong> =&gt; T-DNA integrated into the plant genome.</li>
+<li>Genetic material betwen left and right border (LB, RB) gets integrated into plant genome. No Crown gall (T-DNA removed). Insertion sites are random, can occur multiple times.</li>
+<li><strong>pros</strong>: high success rate of integration. Fast (3-5 days)</li>
+<li><strong>Cons</strong>: Not possible in all plant species, commonly tobacco</li>
+</ul>
+</li>
+<li><strong>Infiltration</strong>:
+<ul>
+<li><em>Agrobacterium</em> co-cultivation <em>in vitro</em>, infiltrate plant tissue</li>
+<li><strong>Pros</strong>: Ti plasmid integrates into plant genome, can obtain transgenic lines through <em>in vitro</em> propagation</li>
+<li><strong>Cons</strong>: low success rate, but can use herbicide resistance to select for successful integration.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>GMO and agriculture</p>
+<ul>
+<li>genetically modified organisms: two categories:</li>
+<li><strong>Insecticide synthesis</strong>
+<ul>
+<li><strong>Bt Endotoxins</strong>, corn potato, cotton, sweet potato, tomate, rice</li>
+<li>concern with effect on helpful pollinator and insect species on the food web, insects can develop resistance</li>
+</ul>
+</li>
+<li><strong>Herbicide resistance</strong>
+<ul>
+<li><strong>Roundup Resistance</strong>: resistance to Roundup (<strong>glyphosate</strong>, Monsanto) allows farmers to reduce herbicide usage. ==&gt; apply to plant directly rather than soil, reduce erosion.</li>
+<li><strong>However</strong>: still use potentially hazardous chemicals and concern with biological containment</li>
+</ul>
+</li>
+<li>Biological Containment: escape of DNA to wild populations.</li>
+<li>concerns: <strong>monoculture</strong>, <strong>high costs</strong>, <strong>ownership</strong>, <strong>monopoly</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Biopharmaceutical</strong> Production</p>
+<ul>
+<li><strong>half of all</strong> expression systems are mammalian cell lines, 34% bacterial, 13% yeast</li>
+<li><strong>Pros</strong>: high yield and proper post-translational modifications (high accuracy in protein folding and gycoslation)</li>
+<li><strong>Cons</strong>: Expensive maintenance and set up costs. high rates of contamination and stable lines can take years to develop.</li>
+<li>mRNA quick.</li>
+<li>Plants as expression systems to produce biopharmaceuticals:
+<ul>
+<li><strong>many advantages</strong>
+<ul>
+<li>cheap, high yield, fast, different compartmetns to synthesize proteins, no risk of culture contamination and mammalian viruses.</li>
+<li><strong>Recombinant Proteins</strong>: transforming <strong>chloroplasts</strong> with expression vectors to get high yields. =&gt; bioencapsulation as protection</li>
+<li><strong>storage</strong> as advantage: in <strong>seeds</strong>, <strong>lyophilisation</strong> (freeze-drying)</li>
+</ul>
+</li>
+<li><strong>limitaions</strong>: Quantity and quality.. <strong>purification</strong> the major cost factor in production, plants and mammalian systems can vary in <strong>post-translational modification</strong></li>
+</ul>
+</li>
+<li><strong>Vitamin A</strong> Deficiency
+<ul>
+<li>essential for immune system. rice: low source of vA and iron. <strong>Golden rice</strong> to produce beta-carotene in endosperm.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+    </body>
+    </html>
